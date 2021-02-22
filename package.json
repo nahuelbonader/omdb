@@ -1,24 +1,26 @@
 {
-  "name": "omdb-front",
+  "homepage": "https://nahuelbonader.github.io/omdb/",
+  "name": "omdb-back",
   "version": "1.0.0",
-  "description": "movie site front",
+  "description": "movies info back",
   "main": "app.js",
   "scripts": {
-    "build": "webpack",
-    "buildev": "webpack -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nahuelbonader/omdb.git"
+    "start": "node app.js",
+    "dev": "nodemon back/app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nahuel Bonader",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nahuelbonader/omdb/issues"
-  },
-  "homepage": "https://github.com/nahuelbonader/omdb#readme",
   "dependencies": {
+    "chalk": "^4.1.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.11.17",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "axios": "^0.21.1",
     "node-sass": "^4.14.1",
     "react": "^16.8.3",
@@ -30,6 +32,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "nodemon": "^2.0.7",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",

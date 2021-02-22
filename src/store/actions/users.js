@@ -8,19 +8,23 @@ const setUsers = (users) => ({ type: SET_USERS, users });
 const removeUser = () => ({ type: REMOVE_USER });
 
 const createUser = (user) =>
-  API.post("/api/users", user)
+  axios
+    .post("/api/users", user)
     .then((res) => res.data)
     .then((user) => console.log(user));
 
 const fetchUsers = () => (dispatch) =>
-  API.get("/api/users")
+  axios
+    .get("/api/users")
     .then((res) => res.data)
     .then((users) => {
-      console.log(users)
-      dispatch(setUsers(users))});
+      console.log(users);
+      dispatch(setUsers(users));
+    });
 
 const loginUser = (user) => (dispatch) =>
-  API.post("/api/auth/login", user)
+  axios
+    .post("/api/auth/login", user)
     .then((res) => res.data)
     .then((user) => {
       dispatch(setUser(user));
@@ -28,11 +32,12 @@ const loginUser = (user) => (dispatch) =>
     });
 
 const fetchUser = () => (dispatch) =>
-  API.get("/api/auth/me")
+  axios
+    .get("/api/auth/me")
     .then((res) => res.data)
     .then((user) => dispatch(setUser(user)));
 
 const logoutUser = () => (dispatch) =>
-  API.post("/api/auth/logout").then(() => dispatch(removeUser()));
+  axios.post("/api/auth/logout").then(() => dispatch(removeUser()));
 
 export { createUser, loginUser, logoutUser, fetchUser, fetchUsers };

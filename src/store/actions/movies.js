@@ -31,17 +31,20 @@ const fetchMovie = (idMovie) => (dispatch) =>
     .catch((err) => console.log(err));
 
 const fetchUserMovies = () => (dispatch) =>
-  API.get(`/api/users/user/movies`)
+  axios
+    .get(`/api/users/user/movies`)
     .then((res) => res.data)
     .then((movies) => dispatch(setFavMovies(movies)));
 
 const addFavMovie = (movie) => (dispatch) =>
-  API.post(`/api/users/user/movies`, movie)
+  axios
+    .post(`/api/users/user/movies`, movie)
     .then((res) => res.data)
     .then((movies) => dispatch(setFavMovies(movies)));
 
 const deleteFavMovie = (movie) => (dispatch) =>
-  API.delete("/api/users/user/movies", { data: movie })
+  axios
+    .delete("/api/users/user/movies", { data: movie })
     .then((res) => res.data)
     .then((movies) => dispatch(setFavMovies(movies)));
 

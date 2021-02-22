@@ -1,21 +1,22 @@
-require("./db");
+require("./api/db");
+const path = require("path");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const chalk = require("chalk");
-const routes = require("./routes");
+const routes = require("./api/routes");
 const passport = require("passport");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const LocalStrategy = require("passport-local").Strategy;
-const { User } = require("./db/models");
+const { User } = require("./api/db/models");
 const cors = require("cors");
 
 // CORS MIDDLEWARE
 app.use(cors());
 
 // STATIC FILE SERVICE MIDDLEWARE
-app.use(express.static("public"));
+app.use(express.static(path.resolve(__dirname, "./src/public")));
 
 // LOGGING MIDDLEWARE
 app.use(morgan("tiny"));
@@ -76,7 +77,7 @@ passport.deserializeUser((id, done) => {
 app.use("/api", routes);
 
 app.use("/*", function (req, res) {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(path.join(__dirname, "./src/public", "index.html"));
 });
 
 const PORT = process.env.PORT || 1337;
