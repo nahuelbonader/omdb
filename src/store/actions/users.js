@@ -1,4 +1,4 @@
-import { API } from "../../api";
+import axios from "axios";
 import { SET_USER, REMOVE_USER, SET_USERS } from "../constants";
 
 const setUser = (user) => ({ type: SET_USER, user });

@@ -6,7 +6,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon back/app.js"
+    "dev": "nodemon back/app.js",
+    "build": "webpack",
+    "buildev": "webpack -w"
   },
   "keywords": [],
   "author": "Nahuel Bonader",
