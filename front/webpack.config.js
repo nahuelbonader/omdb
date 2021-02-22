@@ -1,11 +1,7 @@
 const path = require("path");
 
-const REACT_DIRPATH = path.resolve(__dirname, "front/src");
-const BUILD_DIRPATH = path.resolve(__dirname, "back/public");
-
-console.log(REACT_DIRPATH)
-console.log(BUILD_DIRPATH)
-
+const REACT_DIRPATH = path.resolve(__dirname, "src");
+const BUILD_DIRPATH = path.resolve(__dirname, "../back/public");
 
 module.exports = {
   mode: "development",
