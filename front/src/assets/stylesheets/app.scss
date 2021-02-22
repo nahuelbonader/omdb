@@ -1,0 +1,256 @@
+@import "./colors.scss";
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: $back;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.btn {
+  height: 60%;
+  width: 80px;
+  margin: 3px;
+  background-color: $secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $back;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $backDetails;
+  }
+}
+
+.btn_form {
+  height: 22px;
+  width: 90%;
+  margin: 0px auto;
+  background-color: transparent;
+  color: $back;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #bb8300;
+  }
+}
+
+.btn_movies {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 20px;
+  width: 80px;
+  margin: 3px;
+  border-radius: 20px;
+  background-color: $details;
+  color: $primary;
+  text-decoration: none;
+}
+
+hr {
+  background-color: $details;
+  height: 1px;
+  border: 0;
+}
+
+.movie {
+  border: 1px solid $primary;
+  margin: 20px;
+  width: 200px;
+  height: 350px;
+
+  .data {
+    width: 200px;
+    height: 50px;
+    margin-bottom: 15px;
+
+    .title {
+      width: 150px;
+      margin: 10px 15px;
+      font-size: 20px;
+      color: $primary;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .year {
+      width: 150px;
+      margin: 7px 15px;
+      font-size: 15px;
+      color: $primary;
+    }
+  }
+
+  .image {
+    position: relative;
+    margin: 0px;
+    width: 200px;
+    height: 80%;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 200px;
+      height: 280px;
+      object-fit: cover;
+    }
+  }
+}
+
+// HEADER
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  .top {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px;
+    height: 40px;
+
+    .logo {
+      border-radius: 10px;
+      height: 30px;
+      width: 10%;
+      background-color: $secondary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 30px;
+      color: $back;
+      text-decoration: none;
+    }
+
+    input {
+      margin: 3px;
+      height: 25px;
+      width: 40%;
+      border: none;
+      border-bottom: 2px solid $details;
+      border-radius: 20px;
+      outline: none;
+      background: transparent;
+      font-weight: bold;
+      font-size: large;
+      text-align: center;
+      color: $details;
+    }
+  }
+
+  .forms {
+    background-color: $backDetails;
+  }
+
+  .btns {
+    height: 35px;
+    margin: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  border-bottom: 1px solid $backDetails;
+}
+
+// LOGIN - SINGIN
+.register {
+  margin: 10px auto;
+  height: 200px;
+  width: 350px;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: $secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    border: $back solid 2px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+
+    input {
+      margin: 3px auto;
+      width: 75%;
+      border: none;
+      border-bottom: 2px solid $back;
+      outline: none;
+      background: $secondary;
+      color: $back;
+      font-weight: normal;
+      font-size: 15px;
+    }
+  }
+}
+
+// MOVIE
+.movieContainer {
+  display: flex;
+  justify-content: center;
+
+  .info {
+    width: 50%;
+    margin-left: 50px;
+  }
+
+  h3 {
+    margin: 0px;
+    margin-top: 10px;
+    color: $primary;
+  }
+
+  h4 {
+    margin: 2px;
+    color: $primary;
+  }
+}
+
+// MOVIES
+.moviesContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+// USERS
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  .userContainer {
+    width: 100%;
+    display: flex;
+    margin-bottom: 50px;
+    overflow: scroll;
+    border: 1px solid $primary;
+
+    .movie {
+      margin: 0px;
+      border: 1px solid $details;
+    }
+  }
+}

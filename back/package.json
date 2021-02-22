@@ -1,0 +1,20 @@
+{
+  "homepage": "https://nahuelbonader.github.io/omdb/",
+  "name": "omdb-back",
+  "version": "1.0.0",
+  "description": "movies info back",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon back/app.js"
+  },
+  "keywords": [],
+  "author": "Nahuel Bonader",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+  }
+}
