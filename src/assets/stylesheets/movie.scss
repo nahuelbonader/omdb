@@ -7,16 +7,17 @@
   border: 2px solid $black;
   border-radius: 10px;
   background-color: $grey;
-  box-shadow: -8px 8px 12px $grey;
+  box-shadow: -7px 7px 12px $dark-grey;
   margin: 15px;
-  transition-duration: 500ms;
+  transition-duration: 400ms;
 
   @media only screen and (min-width: 768px) and (orientation: landscape) {
     &:hover {
-      transition-duration: 500ms;
-      box-shadow: 2px 2px 5px $black, -2px -2px 5px $black;
-      width: 25%;
-      height: 315px;
+      transition-duration: 400ms;
+      // box-shadow: 0px 0px;
+      box-shadow: 0px 0px 5px $white;
+      width: 22%;
+      height: 320px;
       margin-top: 7.5px;
     }
   }
