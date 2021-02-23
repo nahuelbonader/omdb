@@ -16,7 +16,7 @@ const cors = require("cors");
 app.use(cors());
 
 // STATIC FILE SERVICE MIDDLEWARE
-app.use(express.static(path.resolve(__dirname, "./src/public")));
+app.use(express.static(path.resolve(__dirname, "./public")));
 
 // LOGGING MIDDLEWARE
 app.use(morgan("tiny"));
@@ -77,7 +77,7 @@ passport.deserializeUser((id, done) => {
 app.use("/api", routes);
 
 app.use("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./src/public", "index.html"));
+  res.sendFile(path.join(__dirname, "./public", "index.html"));
 });
 
 const PORT = process.env.PORT || 1337;
