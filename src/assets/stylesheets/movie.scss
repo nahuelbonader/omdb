@@ -13,7 +13,6 @@
     box-shadow: 0px 0px;
     transition-duration: 200ms;
   }
-  
 
   .image {
     position: relative;
@@ -66,12 +65,12 @@
     background-color: $black;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    padding: 5px 15px;
+    padding: 8.5px 15px;
 
     .title {
       width: 100%;
       margin: 5px 0px;
-      font-size: 16px;
+      font-size: 1.5em;
       color: $white;
       overflow: hidden;
       white-space: nowrap;
@@ -80,7 +79,8 @@
 
     .year {
       width: 100%;
-      font-size: 12px;
+      margin: 0px;
+      font-size: 1em;
       color: $white;
     }
   }
@@ -101,6 +101,16 @@
     &:active {
       box-shadow: 0px 0px;
       transition-duration: 200ms;
+    }
+
+    .data {
+      .title {
+        font-size: 1em;
+      }
+
+      .year {
+        font-size: 0.8em;
+      }
     }
   }
 }
