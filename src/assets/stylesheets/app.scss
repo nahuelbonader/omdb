@@ -1,5 +1,4 @@
 @import "./colors.scss";
-@import "./movie.scss";
 
 * {
   font-family: "Montserrat", sans-serif;
@@ -53,14 +52,11 @@ html {
   }
 }
 
-
 hr {
   background-color: $grey;
   height: 1px;
   border: 0;
 }
-
-
 
 // HEADER
 .headerContainer {

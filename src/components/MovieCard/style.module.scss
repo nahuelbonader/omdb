@@ -1,4 +1,4 @@
-@import "./colors.scss";
+@import "../../assets/stylesheets//colors.scss";
 
 .movie {
   width: 75%;
@@ -50,7 +50,7 @@
       background-color: $dark-yellow;
     }
 
-    .icons {
+    svg {
       font-size: 4vh;
       @if --isFav {
         color: $dark-yellow;
@@ -94,6 +94,7 @@
     width: 20%;
     min-width: 180px;
     height: 300px;
+
     &:hover {
       transition-duration: 400ms;
       box-shadow: -10px 10px 18px $dark-grey;
