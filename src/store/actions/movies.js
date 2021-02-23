@@ -1,5 +1,4 @@
 import axios from "axios";
-import { API } from "../../api";
 import {
   RECEIVE_MOVIES,
   SET_MOVIE,

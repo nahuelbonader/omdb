@@ -5,7 +5,7 @@ export default ({ value, handleChange, path, user, logout }) => (
   <div className="headerContainer">
     <div className="top">
       <Link className="logo" to="/">
-        <div>OMDB</div>
+        <div className="logo">OMDB</div>
       </Link>
 
       <input

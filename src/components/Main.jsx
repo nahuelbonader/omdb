@@ -1,12 +1,12 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import MoviesContainer from "../views/MoviesContainer";
-import MovieContainer from "../views/MovieContainer";
-import FavouritesContainer from "../views/FavouritesContainer";
+import Favourites from "../views/Favourites";
 import HeaderContainer from "../views/HeaderContainer";
-import UsersContainer from "../views/UsersContainer";
 import Login from "../views/Login";
+import Movies from "../views/Movies";
 import Register from "../views/Register";
+import SingleMovie from "../views/SingleMovie";
+import UsersContainer from "../views/UsersContainer";
 
 export default ({ path }) => {
   return (
@@ -14,13 +14,13 @@ export default ({ path }) => {
       <HeaderContainer path={path} />
       <div>
         <Switch>
-          <Route exact path="/movies" component={MoviesContainer} />
-          <Route path="/movies/:idMovie" component={MovieContainer} />
-          <Route path="/favourites" component={FavouritesContainer} />
+          <Route exact path="/movies" component={Movies} />
+          <Route path="/movies/:idMovie" component={SingleMovie} />
+          <Route path="/favourites" component={Favourites} />
           <Route path="/users" component={UsersContainer} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Redirect to="/movies" />
+          <Redirect from="/" to="/movies" />
         </Switch>
       </div>
     </div>

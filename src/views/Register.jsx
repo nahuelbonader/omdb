@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import useInput from "../hooks/useInput";
 import { createUser } from "../store/actions/users";
 
 function Register() {
-  const dispatch = useDispatch();
+  const history = useHistory();
 
   const emailValidator = (email) => email.includes("@") && email.includes(".");
   const passwordValidator = (password) => password.length >= 8;
@@ -25,14 +25,12 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      createUser({
-        firstName: firstName.value,
-        lastName: lastName.value,
-        email: email.value,
-        password: password.value,
-      })
-    );
+    createUser({
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      password: password.value,
+    }).then(() => history.push("/login"));
   };
 
   return (

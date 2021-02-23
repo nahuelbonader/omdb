@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import useInput from "../hooks/useInput";
 import { loginUser } from "../store/actions/users";
+import { fetchUserMovies } from "../store/actions/movies";
 
 function LoginContainer() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [showPassword, setShowPassword] = useState(false);
 
   const emailValidator = (email) => email.includes("@") && email.includes(".");
@@ -29,7 +31,9 @@ function LoginContainer() {
         email: email.value,
         password: password.value,
       })
-    );
+    )
+      .then((user) => dispatch(fetchUserMovies(user._id)))
+      .then(() => history.push("/movies"));
   };
 
   return (

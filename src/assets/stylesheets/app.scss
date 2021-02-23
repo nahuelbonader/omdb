@@ -1,14 +1,20 @@
 @import "./colors.scss";
+@import "./movie.scss";
 
 * {
   font-family: "Montserrat", sans-serif;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0px;
   padding: 0px;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
-  background-color: $back;
+  background-color: $white;
 }
 
 html {
@@ -19,16 +25,16 @@ html {
   height: 60%;
   width: 80px;
   margin: 3px;
-  background-color: $secondary;
+  background-color: $black;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $back;
+  color: $dark-yellow;
   border-radius: 20px;
   text-decoration: none;
   cursor: pointer;
   &:hover {
-    background-color: $backDetails;
+    background-color: $grey;
   }
 }
 
@@ -37,87 +43,32 @@ html {
   width: 90%;
   margin: 0px auto;
   background-color: transparent;
-  color: $back;
+  color: $light-grey;
   border: none;
   border-radius: 20px;
   outline: none;
   cursor: pointer;
   &:hover {
-    background-color: #bb8300;
+    background-color: $dark-yellow;
   }
 }
 
-.btn_movies {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  height: 20px;
-  width: 80px;
-  margin: 3px;
-  border-radius: 20px;
-  background-color: $details;
-  color: $primary;
-  text-decoration: none;
-}
 
 hr {
-  background-color: $details;
+  background-color: $grey;
   height: 1px;
   border: 0;
 }
 
-.movie {
-  border: 1px solid $primary;
-  margin: 20px;
-  width: 200px;
-  height: 350px;
 
-  .data {
-    width: 200px;
-    height: 50px;
-    margin-bottom: 15px;
-
-    .title {
-      width: 150px;
-      margin: 10px 15px;
-      font-size: 20px;
-      color: $primary;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-
-    .year {
-      width: 150px;
-      margin: 7px 15px;
-      font-size: 15px;
-      color: $primary;
-    }
-  }
-
-  .image {
-    position: relative;
-    margin: 0px;
-    width: 200px;
-    height: 80%;
-
-    img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      width: 200px;
-      height: 280px;
-      object-fit: cover;
-    }
-  }
-}
 
 // HEADER
 .headerContainer {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  background-color: $light-yellow;
 
   .top {
     width: 100%;
@@ -131,13 +82,13 @@ hr {
       border-radius: 10px;
       height: 30px;
       width: 10%;
-      background-color: $secondary;
+      background-color: $black;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-size: 30px;
-      color: $back;
+      color: $light-grey;
       text-decoration: none;
     }
 
@@ -146,19 +97,19 @@ hr {
       height: 25px;
       width: 40%;
       border: none;
-      border-bottom: 2px solid $details;
+      border-bottom: 2px solid $grey;
       border-radius: 20px;
       outline: none;
       background: transparent;
       font-weight: bold;
       font-size: large;
       text-align: center;
-      color: $details;
+      color: $grey;
     }
   }
 
   .forms {
-    background-color: $backDetails;
+    background-color: $dark-yellow;
   }
 
   .btns {
@@ -169,7 +120,7 @@ hr {
     justify-content: space-around;
     align-items: center;
   }
-  border-bottom: 1px solid $backDetails;
+  border-bottom: 1px solid $dark-yellow;
 }
 
 // LOGIN - SINGIN
@@ -179,13 +130,13 @@ hr {
   width: 350px;
   padding: 5px;
   border-radius: 20px;
-  background-color: $secondary;
+  background-color: $black;
   display: flex;
   justify-content: center;
   align-items: center;
 
   form {
-    border: $back solid 2px;
+    border: $light-grey solid 2px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -197,10 +148,10 @@ hr {
       margin: 3px auto;
       width: 75%;
       border: none;
-      border-bottom: 2px solid $back;
+      border-bottom: 2px solid $light-grey;
       outline: none;
-      background: $secondary;
-      color: $back;
+      background: $black;
+      color: $light-grey;
       font-weight: normal;
       font-size: 15px;
     }
@@ -220,12 +171,12 @@ hr {
   h3 {
     margin: 0px;
     margin-top: 10px;
-    color: $primary;
+    color: $white;
   }
 
   h4 {
     margin: 2px;
-    color: $primary;
+    color: $white;
   }
 }
 
@@ -246,11 +197,11 @@ hr {
     display: flex;
     margin-bottom: 50px;
     overflow: scroll;
-    border: 1px solid $primary;
+    border: 1px solid $white;
 
     .movie {
       margin: 0px;
-      border: 1px solid $details;
+      border: 1px solid $grey;
     }
   }
 }

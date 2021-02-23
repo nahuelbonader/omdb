@@ -1,57 +1,42 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../store/actions/users";
 import { resetFavMovies } from "../store/actions/movies";
 import { setSearch } from "../store/actions/searches";
 import Header from "../components/Header";
 
-class HeaderContainer extends Component {
-  constructor() {
-    super();
-    this.handleChange = this.handleChange.bind(this);
-    this.logout = this.logout.bind(this);
-  }
+const HeaderContainer = (props) => {
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.usersReducer);
+  const { search } = useSelector((state) => state.searchesReducer);
+  const { path } = props;
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.path !== this.props.path) this.props.setSearch("");
-  }
+  console.log(path)
 
-  handleChange(e) {
-    const value = e.target.value;
-    this.props.setSearch(value);
-  }
+  // useEffect(() => {
+  //   if(path == "/movies")
+  //   dispatch(setSearch(""));
+  // }, [path]);
 
-  logout() {
-    this.props.resetFavMovies();
-    this.props.logoutUser();
-  }
+  const handleChange = (e) => {
+    const { value } = e.target;
+    dispatch(setSearch(value));
+  };
 
-  render() {
-    const { user, path, search } = this.props;
+  const logout = () => {
+    dispatch(resetFavMovies());
+    dispatch(logoutUser());
+  };
 
-    return (
-      <Header
-        value={search}
-        handleChange={this.handleChange}
-        user={user}
-        logout={this.logout}
-        path={path}
-      />
-    );
-  }
-}
+  return (
+    <Header
+      value={search}
+      handleChange={handleChange}
+      user={user}
+      logout={logout}
+      path={path}
+    />
+  );
+};
 
-const mapStateToProps = (state) => ({
-  user: state.usersReducer.user,
-  searchMovies: state.searchesReducer.searchMovies,
-  searchFavourites: state.searchesReducer.searchFavourites,
-  search: state.searchesReducer.search,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  logoutUser: () => dispatch(logoutUser()),
-  resetFavMovies: () => dispatch(resetFavMovies()),
-  setSearch: (search) => dispatch(setSearch(search)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);
+export default HeaderContainer;
