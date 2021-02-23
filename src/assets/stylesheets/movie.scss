@@ -8,12 +8,12 @@
   background-color: $grey;
   box-shadow: -8px 8px 12px $dark-grey;
   margin: 15px;
-  transition-duration: 200ms;
-  &:hover,
+  transition-duration: 300ms;
   &:active {
     box-shadow: 0px 0px;
     transition-duration: 200ms;
   }
+  
 
   .image {
     position: relative;
@@ -51,7 +51,7 @@
       background-color: $dark-yellow;
     }
 
-    .icons {    
+    .icons {
       font-size: 4vh;
       @if --isFav {
         color: $dark-yellow;
