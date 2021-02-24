@@ -6,6 +6,7 @@ import {
   deleteFavMovie,
 } from "../../store/actions/movies";
 import Movie from "../../components/MovieCard";
+import style from "./style.module.scss";
 
 const Movies = () => {
   const dispatch = useDispatch();
@@ -45,7 +46,7 @@ const Movies = () => {
   };
 
   return (
-    <div className="moviesContainer">
+    <div className={style.container}>
       {movies
         ? movies.map((movie) => {
             const isFav = checkFavMovie(movie.imdbID);

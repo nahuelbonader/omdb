@@ -1,0 +1,38 @@
+@import "../../assets/stylesheets/colors.scss";
+
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 500px) {
+  // .movie {
+  //   width: 20%;
+  //   min-width: 180px;
+  //   height: 300px;
+
+  //   &:hover {
+  //     transition-duration: 400ms;
+  //     box-shadow: -10px 10px 18px $dark-grey;
+  //     width: 22%;
+  //     height: 320px;
+  //     margin-top: 7.5px;
+  //   }
+  //   &:active {
+  //     box-shadow: 0px 0px;
+  //     transition-duration: 200ms;
+  //   }
+
+  //   .data {
+  //     .title {
+  //       font-size: 1em;
+  //     }
+
+  //     .year {
+  //       font-size: 0.8em;
+  //     }
+  //   }
+  // }
+}

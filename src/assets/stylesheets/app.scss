@@ -155,34 +155,8 @@ hr {
 }
 
 // MOVIE
-.movieContainer {
-  display: flex;
-  justify-content: center;
 
-  .info {
-    width: 50%;
-    margin-left: 50px;
-  }
 
-  h3 {
-    margin: 0px;
-    margin-top: 10px;
-    color: $white;
-  }
-
-  h4 {
-    margin: 2px;
-    color: $white;
-  }
-}
-
-// MOVIES
-.moviesContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
 // USERS
 .users {
