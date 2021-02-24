@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Main from "../components/Main";
-import { fetchUser } from "../store/actions/users";
-import { fetchUserMovies } from "../store/actions/movies";
-import "../assets/stylesheets/app.scss";
+import Main from "../../components/Main";
+import { fetchUser } from "../../store/actions/users";
+import { fetchUserMovies } from "../../store/actions/movies";
+import "../../assets/stylesheets/app.scss";
 
 class App extends Component {
   componentDidMount() {

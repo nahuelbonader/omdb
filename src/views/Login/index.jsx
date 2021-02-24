@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import useInput from "../hooks/useInput";
-import { loginUser } from "../store/actions/users";
-import { fetchUserMovies } from "../store/actions/movies";
+import useInput from "../../hooks/useInput";
+import { loginUser } from "../../store/actions/users";
+import { fetchUserMovies } from "../../store/actions/movies";
 
 function LoginContainer() {
   const dispatch = useDispatch();

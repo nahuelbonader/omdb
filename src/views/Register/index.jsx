@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import useInput from "../hooks/useInput";
-import { createUser } from "../store/actions/users";
+import useInput from "../../hooks/useInput";
+import { createUser } from "../../store/actions/users";
 
 function Register() {
   const history = useHistory();

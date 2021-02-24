@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
 import store from "./store";
-import App from "./views/App";
+import App from "./views/App/index";
 
 const target = document.getElementById("app");
 

@@ -1,0 +1,19 @@
+@import "../../assets/stylesheets/colors.scss";
+
+.container {
+  input {
+    width: 100%;
+  }
+  svg {
+    float: right;
+  }
+}
+
+// @media only screen and (min-width: 500px) {
+//   .container {
+//     input {
+//     }
+//     svg {
+//     }
+//   }
+// }

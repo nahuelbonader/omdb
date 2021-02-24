@@ -2069,6 +2069,34 @@ ___CSS_LOADER_EXPORT___.push([module.i, "* {\n  font-family: \"Montserrat\", san
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Input/style.module.scss":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-3!./src/components/Input/style.module.scss ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, "._2N3MJJsLVvM8EqLBa8jUSX input {\n  width: 100%;\n}\n\n._2N3MJJsLVvM8EqLBa8jUSX svg {\n  float: right;\n}", "",{"version":3,"sources":["webpack://./src/components/Input/style.module.scss"],"names":[],"mappings":"AAAA;EACE,WAAA;AACF;;AACA;EACE,YAAA;AAEF","sourcesContent":[".container input {\n  width: 100%;\n}\n.container svg {\n  float: right;\n}"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"container": "_2N3MJJsLVvM8EqLBa8jUSX"
+};
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/MovieCard/style.module.scss":
 /*!**********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-3!./src/components/MovieCard/style.module.scss ***!
@@ -41005,10 +41033,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./src/components/Header.jsx":
-/*!***********************************!*\
-  !*** ./src/components/Header.jsx ***!
-  \***********************************/
+/***/ "./src/components/Input/index.jsx":
+/*!****************************************!*\
+  !*** ./src/components/Input/index.jsx ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -41016,49 +41044,54 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_icons_bs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/bs */ "./node_modules/react-icons/bs/index.esm.js");
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.module.scss */ "./src/components/Input/style.module.scss");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
-  var value = _ref.value,
+  var placeholder = _ref.placeholder,
       handleChange = _ref.handleChange,
-      path = _ref.path,
-      user = _ref.user,
-      logout = _ref.logout;
+      value = _ref.value,
+      cleanValue = _ref.cleanValue;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "headerContainer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "top"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "logo",
-    to: "/"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "logo"
-  }, "OMDB")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    placeholder: path === "/favourites" ? "Find your favourite movie" : path === "/users" ? "Who are you looking for?" : "What movie do you want?",
+    className: _style_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].container
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    placeholder: placeholder,
     onChange: handleChange,
     value: value
-  }), user._id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "btn"
-  }, user.firstName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "btn",
-    to: "/movies"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    onClick: logout
-  }, "Logout"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/login"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "btn"
-  }, "Login"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "btns"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "btn",
-    to: "/users"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Users")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "btn",
-    to: user._id ? "/favourites" : "/login"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Favs"))));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_1__["BsFillXCircleFill"], {
+    onClick: cleanValue
+  }));
 });
+
+/***/ }),
+
+/***/ "./src/components/Input/style.module.scss":
+/*!************************************************!*\
+  !*** ./src/components/Input/style.module.scss ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ref_5_3_style_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js??ref--5-3!./style.module.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Input/style.module.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ref_5_3_style_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ref_5_3_style_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -41074,13 +41107,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _views_Favourites__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/Favourites */ "./src/views/Favourites.jsx");
-/* harmony import */ var _views_HeaderContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/HeaderContainer */ "./src/views/HeaderContainer.jsx");
-/* harmony import */ var _views_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/Login */ "./src/views/Login.jsx");
-/* harmony import */ var _views_Movies__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/Movies */ "./src/views/Movies.jsx");
-/* harmony import */ var _views_Register__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../views/Register */ "./src/views/Register.jsx");
-/* harmony import */ var _views_SingleMovie__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../views/SingleMovie */ "./src/views/SingleMovie.jsx");
-/* harmony import */ var _views_UsersContainer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../views/UsersContainer */ "./src/views/UsersContainer.jsx");
+/* harmony import */ var _views_Favourites__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/Favourites */ "./src/views/Favourites/index.jsx");
+/* harmony import */ var _views_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/Header */ "./src/views/Header/index.jsx");
+/* harmony import */ var _views_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/Login */ "./src/views/Login/index.jsx");
+/* harmony import */ var _views_Movies__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/Movies */ "./src/views/Movies/index.jsx");
+/* harmony import */ var _views_Register__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../views/Register */ "./src/views/Register/index.jsx");
+/* harmony import */ var _views_SingleMovie__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../views/SingleMovie */ "./src/views/SingleMovie/index.jsx");
+/* harmony import */ var _views_Users__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../views/Users */ "./src/views/Users/index.jsx");
 
 
 
@@ -41092,7 +41125,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var path = _ref.path;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_views_HeaderContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_views_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
     path: path
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
@@ -41106,7 +41139,7 @@ __webpack_require__.r(__webpack_exports__);
     component: _views_Favourites__WEBPACK_IMPORTED_MODULE_2__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/users",
-    component: _views_UsersContainer__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _views_Users__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/login",
     component: _views_Login__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -41341,7 +41374,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store */ "./src/store/index.js");
-/* harmony import */ var _views_App__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/App */ "./src/views/App.jsx");
+/* harmony import */ var _views_App_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/App/index */ "./src/views/App/index.jsx");
 
 
 
@@ -41353,7 +41386,7 @@ var app = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElemen
   store: _store__WEBPACK_IMPORTED_MODULE_4__["default"]
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
   path: "/",
-  component: _views_App__WEBPACK_IMPORTED_MODULE_5__["default"]
+  component: _views_App_index__WEBPACK_IMPORTED_MODULE_5__["default"]
 })));
 Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(app, target);
 
@@ -41471,19 +41504,35 @@ var deleteFavMovie = function deleteFavMovie(movie) {
 /*!***************************************!*\
   !*** ./src/store/actions/searches.js ***!
   \***************************************/
-/*! exports provided: setSearch */
+/*! exports provided: setSearchMovies, setSearchFavourites, setSearchUsers */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setSearch", function() { return setSearch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setSearchMovies", function() { return setSearchMovies; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setSearchFavourites", function() { return setSearchFavourites; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setSearchUsers", function() { return setSearchUsers; });
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/store/constants.js");
 
 
-var setSearch = function setSearch(search) {
+var setSearchMovies = function setSearchMovies(payload) {
   return {
-    type: _constants__WEBPACK_IMPORTED_MODULE_0__["SET_SEARCH"],
-    search: search
+    type: _constants__WEBPACK_IMPORTED_MODULE_0__["SET_SEARCH_MOVIES"],
+    payload: payload
+  };
+};
+
+var setSearchFavourites = function setSearchFavourites(payload) {
+  return {
+    type: _constants__WEBPACK_IMPORTED_MODULE_0__["SET_SEARCH_FAVOURITES"],
+    payload: payload
+  };
+};
+
+var setSearchUsers = function setSearchUsers(payload) {
+  return {
+    type: _constants__WEBPACK_IMPORTED_MODULE_0__["SET_SEARCH_USERS"],
+    payload: payload
   };
 };
 
@@ -41587,7 +41636,7 @@ var logoutUser = function logoutUser() {
 /*!********************************!*\
   !*** ./src/store/constants.js ***!
   \********************************/
-/*! exports provided: RECEIVE_MOVIES, SET_MOVIE, FAVOURITE_MOVIES, RESET_FAVS, SET_USERS, SET_USER, REMOVE_USER, SET_SEARCH, IMDB */
+/*! exports provided: RECEIVE_MOVIES, SET_MOVIE, FAVOURITE_MOVIES, RESET_FAVS, SET_USERS, SET_USER, REMOVE_USER, SET_SEARCH_MOVIES, SET_SEARCH_FAVOURITES, SET_SEARCH_USERS, IMDB */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41599,7 +41648,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_USERS", function() { return SET_USERS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_USER", function() { return SET_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_USER", function() { return REMOVE_USER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_SEARCH", function() { return SET_SEARCH; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_SEARCH_MOVIES", function() { return SET_SEARCH_MOVIES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_SEARCH_FAVOURITES", function() { return SET_SEARCH_FAVOURITES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_SEARCH_USERS", function() { return SET_SEARCH_USERS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMDB", function() { return IMDB; });
 // Movies
 var RECEIVE_MOVIES = "RECEIVE_MOVIES";
@@ -41611,7 +41662,9 @@ var SET_USERS = "SET_USERS";
 var SET_USER = "SET_USER";
 var REMOVE_USER = "REMOVE_USER"; // Searches
 
-var SET_SEARCH = "SET_SEARCH"; // IMDB API
+var SET_SEARCH_MOVIES = "SET_SEARCH_MOVIES";
+var SET_SEARCH_FAVOURITES = "SET_SEARCH_FAVOURITES";
+var SET_SEARCH_USERS = "SET_SEARCH_USERS"; // IMDB API
 
 var IMDB = "https://www.omdbapi.com/?apikey=4621e76e";
 
@@ -41749,16 +41802,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var initialSearchState = {
-  search: ""
+  moviesSearch: "",
+  favouritesSearch: "",
+  usersSearch: ""
 };
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialSearchState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case _constants__WEBPACK_IMPORTED_MODULE_0__["SET_SEARCH"]:
+    case _constants__WEBPACK_IMPORTED_MODULE_0__["SET_SEARCH_MOVIES"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        search: action.search
+        moviesSearch: action.payload
+      });
+
+    case _constants__WEBPACK_IMPORTED_MODULE_0__["SET_SEARCH_FAVOURITES"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        favouritesSearch: action.payload
+      });
+
+    case _constants__WEBPACK_IMPORTED_MODULE_0__["SET_SEARCH_USERS"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        usersSearch: action.payload
       });
 
     default:
@@ -41816,10 +41881,10 @@ var initialUsersState = {
 
 /***/ }),
 
-/***/ "./src/views/App.jsx":
-/*!***************************!*\
-  !*** ./src/views/App.jsx ***!
-  \***************************/
+/***/ "./src/views/App/index.jsx":
+/*!*********************************!*\
+  !*** ./src/views/App/index.jsx ***!
+  \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -41828,10 +41893,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Main */ "./src/components/Main.jsx");
-/* harmony import */ var _store_actions_users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/actions/users */ "./src/store/actions/users.js");
-/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions/movies */ "./src/store/actions/movies.js");
-/* harmony import */ var _assets_stylesheets_app_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/stylesheets/app.scss */ "./src/assets/stylesheets/app.scss");
+/* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Main */ "./src/components/Main.jsx");
+/* harmony import */ var _store_actions_users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../store/actions/users */ "./src/store/actions/users.js");
+/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../store/actions/movies */ "./src/store/actions/movies.js");
+/* harmony import */ var _assets_stylesheets_app_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/stylesheets/app.scss */ "./src/assets/stylesheets/app.scss");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41914,10 +41979,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./src/views/Favourites.jsx":
-/*!**********************************!*\
-  !*** ./src/views/Favourites.jsx ***!
-  \**********************************/
+/***/ "./src/views/Favourites/index.jsx":
+/*!****************************************!*\
+  !*** ./src/views/Favourites/index.jsx ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -41926,8 +41991,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/actions/movies */ "./src/store/actions/movies.js");
-/* harmony import */ var _components_MovieCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/MovieCard */ "./src/components/MovieCard/index.jsx");
+/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../store/actions/movies */ "./src/store/actions/movies.js");
+/* harmony import */ var _components_MovieCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/MovieCard */ "./src/components/MovieCard/index.jsx");
 
 
 
@@ -41949,7 +42014,7 @@ var FavouritesContainer = function FavouritesContainer() {
   var _useSelector3 = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(function (state) {
     return state.searchesReducer;
   }),
-      search = _useSelector3.search;
+      favouritesSearch = _useSelector3.favouritesSearch;
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (!favourites.length && user._id) dispatch(Object(_store_actions_movies__WEBPACK_IMPORTED_MODULE_2__["fetchUserMovies"])(user._id));
@@ -41960,23 +42025,18 @@ var FavouritesContainer = function FavouritesContainer() {
   };
 
   var movies = favourites.filter(function (movie) {
-    return movie.Title.toLowerCase().match(search.toLowerCase());
+    return movie.Title.toLowerCase().match(favouritesSearch.toLowerCase());
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "moviesContainer"
   }, movies.map(function (movie) {
-    return (
-      /*#__PURE__*/
-      // <div key={movie._id}>
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MovieCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        key: movie._id,
-        movie: movie,
-        handleClick: deleteMovie,
-        isFav: true,
-        user: user
-      }) // </div>
-
-    );
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MovieCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      key: movie._id,
+      movie: movie,
+      handleClick: deleteMovie,
+      isFav: true,
+      user: user
+    });
   }));
 };
 
@@ -41984,10 +42044,10 @@ var FavouritesContainer = function FavouritesContainer() {
 
 /***/ }),
 
-/***/ "./src/views/HeaderContainer.jsx":
-/*!***************************************!*\
-  !*** ./src/views/HeaderContainer.jsx ***!
-  \***************************************/
+/***/ "./src/views/Header/index.jsx":
+/*!************************************!*\
+  !*** ./src/views/Header/index.jsx ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -41996,10 +42056,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _store_actions_users__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/actions/users */ "./src/store/actions/users.js");
-/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/actions/movies */ "./src/store/actions/movies.js");
-/* harmony import */ var _store_actions_searches__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions/searches */ "./src/store/actions/searches.js");
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Header */ "./src/components/Header.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Input */ "./src/components/Input/index.jsx");
+/* harmony import */ var _store_actions_users__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../store/actions/users */ "./src/store/actions/users.js");
+/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../store/actions/movies */ "./src/store/actions/movies.js");
+/* harmony import */ var _store_actions_searches__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../store/actions/searches */ "./src/store/actions/searches.js");
+
 
 
 
@@ -42018,41 +42080,97 @@ var HeaderContainer = function HeaderContainer(props) {
   var _useSelector2 = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(function (state) {
     return state.searchesReducer;
   }),
-      search = _useSelector2.search;
+      moviesSearch = _useSelector2.moviesSearch,
+      favouritesSearch = _useSelector2.favouritesSearch,
+      usersSearch = _useSelector2.usersSearch;
 
   var path = props.path;
-  console.log(path); // useEffect(() => {
-  //   if(path == "/movies")
-  //   dispatch(setSearch(""));
-  // }, [path]);
 
-  var handleChange = function handleChange(e) {
-    var value = e.target.value;
-    dispatch(Object(_store_actions_searches__WEBPACK_IMPORTED_MODULE_4__["setSearch"])(value));
+  var handleChangeMaker = function handleChangeMaker(setterFn) {
+    return function (e) {
+      var value = e.target.value;
+      dispatch(setterFn(value));
+    };
+  };
+
+  var cleanerMaker = function cleanerMaker(setterFn) {
+    return function () {
+      dispatch(setterFn(""));
+    };
   };
 
   var logout = function logout() {
-    dispatch(Object(_store_actions_movies__WEBPACK_IMPORTED_MODULE_3__["resetFavMovies"])());
-    dispatch(Object(_store_actions_users__WEBPACK_IMPORTED_MODULE_2__["logoutUser"])());
+    dispatch(Object(_store_actions_movies__WEBPACK_IMPORTED_MODULE_5__["resetFavMovies"])());
+    dispatch(Object(_store_actions_users__WEBPACK_IMPORTED_MODULE_4__["logoutUser"])());
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    value: search,
-    handleChange: handleChange,
-    user: user,
-    logout: logout,
-    path: path
-  });
+  var selectInput = function selectInput(path) {
+    switch (path) {
+      case "/favourites":
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          placeholder: "Find your favourite movie",
+          handleChange: handleChangeMaker(_store_actions_searches__WEBPACK_IMPORTED_MODULE_6__["setSearchFavourites"]),
+          value: favouritesSearch,
+          cleanValue: cleanerMaker(_store_actions_searches__WEBPACK_IMPORTED_MODULE_6__["setSearchFavourites"])
+        });
+
+      case "/movies":
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          placeholder: "What movie do you want?",
+          handleChange: handleChangeMaker(_store_actions_searches__WEBPACK_IMPORTED_MODULE_6__["setSearchMovies"]),
+          value: moviesSearch,
+          cleanValue: cleanerMaker(_store_actions_searches__WEBPACK_IMPORTED_MODULE_6__["setSearchMovies"])
+        });
+
+      case "/users":
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          placeholder: "Who are you looking for?",
+          handleChange: handleChangeMaker(_store_actions_searches__WEBPACK_IMPORTED_MODULE_6__["setSearchUsers"]),
+          value: usersSearch,
+          cleanValue: cleanerMaker(_store_actions_searches__WEBPACK_IMPORTED_MODULE_6__["setSearchUsers"])
+        });
+    }
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "headerContainer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "top"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "logo",
+    to: "/"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "logo"
+  }, "OMDB")), selectInput(path), user._id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "btn"
+  }, user.firstName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "btn",
+    to: "/movies"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    onClick: logout
+  }, "Logout"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/login"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "btn"
+  }, "Login"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "btns"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "btn",
+    to: "/users"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Users")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "btn",
+    to: user._id ? "/favourites" : "/login"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Favs"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HeaderContainer);
 
 /***/ }),
 
-/***/ "./src/views/Login.jsx":
-/*!*****************************!*\
-  !*** ./src/views/Login.jsx ***!
-  \*****************************/
+/***/ "./src/views/Login/index.jsx":
+/*!***********************************!*\
+  !*** ./src/views/Login/index.jsx ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42062,9 +42180,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useInput */ "./src/hooks/useInput.js");
-/* harmony import */ var _store_actions_users__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions/users */ "./src/store/actions/users.js");
-/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/actions/movies */ "./src/store/actions/movies.js");
+/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks/useInput */ "./src/hooks/useInput.js");
+/* harmony import */ var _store_actions_users__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../store/actions/users */ "./src/store/actions/users.js");
+/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../store/actions/movies */ "./src/store/actions/movies.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -42157,10 +42275,10 @@ function LoginContainer() {
 
 /***/ }),
 
-/***/ "./src/views/Movies.jsx":
-/*!******************************!*\
-  !*** ./src/views/Movies.jsx ***!
-  \******************************/
+/***/ "./src/views/Movies/index.jsx":
+/*!************************************!*\
+  !*** ./src/views/Movies/index.jsx ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42169,8 +42287,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/actions/movies */ "./src/store/actions/movies.js");
-/* harmony import */ var _components_MovieCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/MovieCard */ "./src/components/MovieCard/index.jsx");
+/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../store/actions/movies */ "./src/store/actions/movies.js");
+/* harmony import */ var _components_MovieCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/MovieCard */ "./src/components/MovieCard/index.jsx");
 
 
 
@@ -42193,11 +42311,11 @@ var Movies = function Movies() {
   var _useSelector3 = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(function (state) {
     return state.searchesReducer;
   }),
-      search = _useSelector3.search;
+      moviesSearch = _useSelector3.moviesSearch;
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (search.length) dispatch(Object(_store_actions_movies__WEBPACK_IMPORTED_MODULE_2__["fetchMovies"])(search));
-  }, [search]);
+    if (moviesSearch.length) dispatch(Object(_store_actions_movies__WEBPACK_IMPORTED_MODULE_2__["fetchMovies"])(moviesSearch));
+  }, [moviesSearch]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var words = ["car", "run", "face", "red", "rich", "path", "bottom", "light", "black", "guitar"];
     var random = words[Math.floor(Math.random() * words.length)];
@@ -42238,10 +42356,10 @@ var Movies = function Movies() {
 
 /***/ }),
 
-/***/ "./src/views/Register.jsx":
-/*!********************************!*\
-  !*** ./src/views/Register.jsx ***!
-  \********************************/
+/***/ "./src/views/Register/index.jsx":
+/*!**************************************!*\
+  !*** ./src/views/Register/index.jsx ***!
+  \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42250,15 +42368,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useInput */ "./src/hooks/useInput.js");
-/* harmony import */ var _store_actions_users__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions/users */ "./src/store/actions/users.js");
+/* harmony import */ var _hooks_useInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../hooks/useInput */ "./src/hooks/useInput.js");
+/* harmony import */ var _store_actions_users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../store/actions/users */ "./src/store/actions/users.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 
 
 
@@ -42276,25 +42392,25 @@ function Register() {
     return password.length >= 8;
   };
 
-  var _useInput = Object(_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__["default"])("firstName"),
+  var _useInput = Object(_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__["default"])("firstName"),
       firstName = _useInput.firstName,
       dataFirstName = _objectWithoutProperties(_useInput, ["firstName"]);
 
-  var _useInput2 = Object(_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__["default"])("lastName"),
+  var _useInput2 = Object(_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__["default"])("lastName"),
       lastName = _useInput2.lastName,
       dataLastName = _objectWithoutProperties(_useInput2, ["lastName"]);
 
-  var _useInput3 = Object(_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__["default"])("email", emailValidator, "Ingrese un email valido"),
+  var _useInput3 = Object(_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__["default"])("email", emailValidator, "Ingrese un email valido"),
       email = _useInput3.email,
       dataEmail = _objectWithoutProperties(_useInput3, ["email"]);
 
-  var _useInput4 = Object(_hooks_useInput__WEBPACK_IMPORTED_MODULE_3__["default"])("password", passwordValidator, "Password must contain at least 8 characters"),
+  var _useInput4 = Object(_hooks_useInput__WEBPACK_IMPORTED_MODULE_2__["default"])("password", passwordValidator, "Password must contain at least 8 characters"),
       password = _useInput4.password,
       dataPassword = _objectWithoutProperties(_useInput4, ["password"]);
 
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
-    Object(_store_actions_users__WEBPACK_IMPORTED_MODULE_4__["createUser"])({
+    Object(_store_actions_users__WEBPACK_IMPORTED_MODULE_3__["createUser"])({
       firstName: firstName.value,
       lastName: lastName.value,
       email: email.value,
@@ -42341,10 +42457,10 @@ function Register() {
 
 /***/ }),
 
-/***/ "./src/views/SingleMovie.jsx":
-/*!***********************************!*\
-  !*** ./src/views/SingleMovie.jsx ***!
-  \***********************************/
+/***/ "./src/views/SingleMovie/index.jsx":
+/*!*****************************************!*\
+  !*** ./src/views/SingleMovie/index.jsx ***!
+  \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42353,7 +42469,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/actions/movies */ "./src/store/actions/movies.js");
+/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../store/actions/movies */ "./src/store/actions/movies.js");
 
 
 
@@ -42387,10 +42503,10 @@ var SingleMovie = function SingleMovie(props) {
 
 /***/ }),
 
-/***/ "./src/views/UsersContainer.jsx":
-/*!**************************************!*\
-  !*** ./src/views/UsersContainer.jsx ***!
-  \**************************************/
+/***/ "./src/views/Users/index.jsx":
+/*!***********************************!*\
+  !*** ./src/views/Users/index.jsx ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42399,9 +42515,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _store_actions_users__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/actions/users */ "./src/store/actions/users.js");
-/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/actions/movies */ "./src/store/actions/movies.js");
-/* harmony import */ var _components_Users__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Users */ "./src/components/Users.jsx");
+/* harmony import */ var _store_actions_users__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../store/actions/users */ "./src/store/actions/users.js");
+/* harmony import */ var _store_actions_movies__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../store/actions/movies */ "./src/store/actions/movies.js");
+/* harmony import */ var _components_Users__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Users */ "./src/components/Users.jsx");
 
 
 
@@ -42420,13 +42536,13 @@ var UsersContainer = function UsersContainer() {
   var _useSelector2 = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(function (state) {
     return state.searchesReducer;
   }),
-      search = _useSelector2.search;
+      usersSearch = _useSelector2.usersSearch;
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     dispatch(Object(_store_actions_users__WEBPACK_IMPORTED_MODULE_2__["fetchUsers"])());
   }, []);
   var filteredUsers = users.filter(function (user) {
-    return user.firstName.toLowerCase().match(search.toLowerCase());
+    return user.firstName.toLowerCase().match(usersSearch.toLowerCase());
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Users__WEBPACK_IMPORTED_MODULE_4__["default"], {
     users: filteredUsers,

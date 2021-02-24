@@ -4,18 +4,18 @@ import {
   fetchMovies,
   addFavMovie,
   deleteFavMovie,
-} from "../store/actions/movies";
-import Movie from "../components/MovieCard";
+} from "../../store/actions/movies";
+import Movie from "../../components/MovieCard";
 
 const Movies = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.usersReducer);
   const { favourites, movies } = useSelector((state) => state.moviesReducer);
-  const { search } = useSelector((state) => state.searchesReducer);
+  const { moviesSearch } = useSelector((state) => state.searchesReducer);
 
   useEffect(() => {
-    if (search.length) dispatch(fetchMovies(search));
-  }, [search]);
+    if (moviesSearch.length) dispatch(fetchMovies(moviesSearch));
+  }, [moviesSearch]);
 
   useEffect(() => {
     const words = [
