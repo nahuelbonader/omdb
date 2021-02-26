@@ -5,6 +5,6 @@ import style from "./style.module.scss";
 export default ({ placeholder, handleChange, value, cleanValue }) => (
   <div className={style.container}>
     <input placeholder={placeholder} onChange={handleChange} value={value} />
-    <BsFillXCircleFill onClick={cleanValue} />
+    <BsFillXCircleFill onClick={cleanValue} className={style.cross} />
   </div>
 );

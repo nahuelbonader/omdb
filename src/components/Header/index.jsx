@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import Input from "../../components/Input";
+import { Link, useLocation } from "react-router-dom";
 import { logoutUser } from "../../store/actions/users";
 import { resetFavMovies } from "../../store/actions/movies";
 import {
@@ -9,14 +8,18 @@ import {
   setSearchUsers,
   setSearchFavourites,
 } from "../../store/actions/searches";
+import { BsList, BsPeopleCircle } from "react-icons/bs";
+import Input from "../Input";
+import Logo from "../Logo/index";
+import style from "./style.module.scss";
 
-const HeaderContainer = (props) => {
+const HeaderContainer = () => {
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.usersReducer);
   const { moviesSearch, favouritesSearch, usersSearch } = useSelector(
     (state) => state.searchesReducer
   );
-  const { path } = props;
 
   const handleChangeMaker = (setterFn) => {
     return (e) => {
@@ -34,10 +37,11 @@ const HeaderContainer = (props) => {
   const logout = () => {
     dispatch(resetFavMovies());
     dispatch(logoutUser());
+    handleResponsive();
   };
 
-  const selectInput = (path) => {
-    switch (path) {
+  const selectInput = (pathname) => {
+    switch (pathname) {
       case "/favourites":
         return (
           <Input
@@ -68,36 +72,59 @@ const HeaderContainer = (props) => {
     }
   };
 
+  const handleResponsive = () => {
+    const x = document.getElementById("btnsNavbar");
+    console.log(x);
+
+    x.className = x.className === style.btns ? style.responsive : style.btns;
+  };
+
+  useEffect(() => {
+    const closeResponsive = () => {
+      const x = document.getElementById("btnsNavbar");
+      x.className = style.btns;
+    };
+
+    const content = document.getElementById("content");
+
+    content.addEventListener("click", closeResponsive);
+  }, []);
+
   return (
-    <div className="headerContainer">
-      <div className="top">
-        <Link className="logo" to="/">
-          <div className="logo">OMDB</div>
-        </Link>
+    <div className={style.container}>
+      <BsList className={style.navBar_toggle} onClick={handleResponsive} />
+      <Logo />
+      {selectInput(pathname)}
 
-        {selectInput(path)}
+      <Link to={user._id ? "/user" : "/login"} className={style.user_icon}>
+        <BsPeopleCircle className={style.icon} />
+      </Link>
 
+      {user._id ? (
+        <div className={style.user_name}>{user.firstName}</div>
+      ) : null}
+
+      <div className={style.btns} id="btnsNavbar">
         {user._id ? (
-          <div>
-            <div className="btn">{user.firstName}</div>
-            <Link className="btn" to="/movies">
-              <div onClick={logout}>Logout</div>
-            </Link>
-          </div>
+          <Link className={style.btn} to="/movies" onClick={logout}>
+            Logout
+          </Link>
         ) : (
-          <Link to="/login">
-            <div className="btn">Login</div>
+          <Link className={style.btn} to="/login">
+            Login
           </Link>
         )}
-      </div>
 
-      <div className="btns">
-        <Link className="btn" to={`/users`}>
-          <div>Users</div>
+        <Link className={style.btn} to={`/`}>
+          Home
         </Link>
 
-        <Link className="btn" to={user._id ? `/favourites` : "/login"}>
-          <div>Favs</div>
+        <Link className={style.btn} to={`/users`}>
+          Users
+        </Link>
+
+        <Link className={style.btn} to={user._id ? `/favourites` : "/login"}>
+          Favs
         </Link>
       </div>
     </div>
