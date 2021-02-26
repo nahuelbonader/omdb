@@ -3,8 +3,8 @@
 .container {
   width: 70vw;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
   background-color: $white;
   border: 1px solid $grey;
   border-radius: 10px;
@@ -22,18 +22,20 @@
     color: $grey;
   }
   .cross {
-    float: right;
-    font-size: 18px;
+    font-size: 20px;
+    color: $grey;
   }
 }
 
 @media only screen and (min-width: 500px) {
   .container {
-    width: 50vw;
+    width: 40vw;
+    padding: 0px;
 
-    // input {
-    // }
-    // svg {
-    // }
+    .cross {
+      position: absolute;
+      right: 31vw;
+      font-size: 20px;
+    }
   }
 }
