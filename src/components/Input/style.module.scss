@@ -1,7 +1,15 @@
 @import "../../assets/stylesheets/colors.scss";
 
+::-webkit-input-placeholder {
+  text-align: center;
+}
+:-moz-placeholder {
+  text-align: center;
+}
+
 .container {
-  width: 70vw;
+  width: 65vw;
+  margin: 0px 6vw;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -18,7 +26,7 @@
     border-bottom-left-radius: 10px;
     outline: none;
     font-weight: bold;
-    font-size: 1em;
+    font-size: calc(0.7em * 1vw);
     color: $grey;
   }
   .cross {
@@ -31,11 +39,6 @@
   .container {
     width: 40vw;
     padding: 0px;
-
-    .cross {
-      position: absolute;
-      right: 31vw;
-      font-size: 20px;
-    }
+    margin: 0px 18vw;
   }
 }

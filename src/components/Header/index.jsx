@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { logoutUser } from "../../store/actions/users";
 import { resetFavMovies } from "../../store/actions/movies";
 import {
@@ -8,7 +8,7 @@ import {
   setSearchUsers,
   setSearchFavourites,
 } from "../../store/actions/searches";
-import { BsList, BsPeopleCircle } from "react-icons/bs";
+import { BsList, BsPeopleCircle, BsPersonPlusFill } from "react-icons/bs";
 import Input from "../Input";
 import Logo from "../Logo/index";
 import style from "./style.module.scss";
@@ -16,7 +16,9 @@ import style from "./style.module.scss";
 const HeaderContainer = () => {
   const { pathname } = useLocation();
   const dispatch = useDispatch();
+  const history = useHistory();
   const { user } = useSelector((state) => state.usersReducer);
+  const hasUser = Object.keys(user).length > 0;
   const { moviesSearch, favouritesSearch, usersSearch } = useSelector(
     (state) => state.searchesReducer
   );
@@ -37,7 +39,7 @@ const HeaderContainer = () => {
   const logout = () => {
     dispatch(resetFavMovies());
     dispatch(logoutUser());
-    handleResponsive();
+    history.push("/movies");
   };
 
   const selectInput = (pathname) => {
@@ -69,6 +71,8 @@ const HeaderContainer = () => {
             cleanValue={cleanerMaker(setSearchUsers)}
           />
         );
+      default:
+        return <Input />;
     }
   };
 
@@ -96,25 +100,34 @@ const HeaderContainer = () => {
       <Logo />
       {selectInput(pathname)}
 
-      <Link to={user._id ? "/user" : "/login"} className={style.user_icon}>
-        <BsPeopleCircle className={style.icon} />
-      </Link>
-
-      {user._id ? (
-        <div className={style.user_name}>{user.firstName}</div>
-      ) : null}
-
-      <div className={style.btns} id="btnsNavbar">
-        {user._id ? (
-          <Link className={style.btn} to="/movies" onClick={logout}>
-            Logout
-          </Link>
-        ) : (
-          <Link className={style.btn} to="/login">
+      {hasUser ? (
+        <div className={style.dropdown}>
+          <div className={style.iconContainer}>
+            <BsPeopleCircle className={style.icon} />
+          </div>
+          <div class={style.dropdown_content}>
+            <div className={style.user_name}>{user.firstName}</div>
+            <Link to="/perfil" className={style.dropdown_item}>
+              Perfil
+            </Link>
+            <Link className={style.dropdown_item} to="/movies" onClick={logout}>
+              Logout
+            </Link>
+          </div>
+        </div>
+      ) : (
+        <>
+          <BsPersonPlusFill
+            onClick={() => history.push("/login")}
+            className={style.login_icon}
+          />
+          <Link className={style.login_btn} to="/login">
             Login
           </Link>
-        )}
+        </>
+      )}
 
+      <div className={style.btns} id="btnsNavbar">
         <Link className={style.btn} to={`/`}>
           Home
         </Link>

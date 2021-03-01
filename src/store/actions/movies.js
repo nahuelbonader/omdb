@@ -24,9 +24,12 @@ const fetchMovies = (search) => (dispatch) =>
 
 const fetchMovie = (idMovie) => (dispatch) =>
   axios
-    .get(`${IMDB}&i=${idMovie}`)
+    .get(`${IMDB}&i=${idMovie}&plot=full`)
     .then((res) => res.data)
-    .then((movie) => dispatch(setMovie(movie)))
+    .then((movie) => {
+      console.log(movie);
+      dispatch(setMovie(movie));
+    })
     .catch((err) => console.log(err));
 
 const fetchUserMovies = () => (dispatch) =>
