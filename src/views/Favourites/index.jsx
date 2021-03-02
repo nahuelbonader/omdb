@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteFavMovie, fetchUserMovies } from "../../store/actions/movies";
 import Movie from "../../components/MovieCard";
+import style from "./style.module.scss";
 
 const FavouritesContainer = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const FavouritesContainer = () => {
   );
 
   return (
-    <div className="moviesContainer">
+    <div className={style.container}>
       {movies.map((movie) => (
         <Movie
           key={movie._id}

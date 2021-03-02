@@ -9,6 +9,7 @@ import {
   setSearchFavourites,
 } from "../../store/actions/searches";
 import { BsList, BsPeopleCircle, BsPersonPlusFill } from "react-icons/bs";
+import { IoEnterOutline } from "react-icons/io5";
 import Input from "../Input";
 import Logo from "../Logo/index";
 import style from "./style.module.scss";
@@ -117,7 +118,7 @@ const HeaderContainer = () => {
         </div>
       ) : (
         <>
-          <BsPersonPlusFill
+          <IoEnterOutline
             onClick={() => history.push("/login")}
             className={style.login_icon}
           />
