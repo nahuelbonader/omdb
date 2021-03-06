@@ -76,6 +76,11 @@ passport.deserializeUser((id, done) => {
 // ROUTES MIDDLEWARE
 app.use("/api", routes);
 
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
+
 app.use("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "./public", "index.html"));
 });

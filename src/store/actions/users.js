@@ -29,6 +29,10 @@ const loginUser = (user) => (dispatch) =>
     .then((user) => {
       dispatch(setUser(user));
       return user;
+    })
+    .catch((err) => {
+      console.log("MENSAJE", err);
+      throw new Error(err);
     });
 
 const fetchUser = () => (dispatch) =>

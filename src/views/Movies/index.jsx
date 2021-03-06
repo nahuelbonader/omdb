@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchMovies,
@@ -6,6 +6,8 @@ import {
   deleteFavMovie,
 } from "../../store/actions/movies";
 import Movie from "../../components/MovieCard";
+import TopButton from "../../components/TopButton";
+import scrollFunction from "../../components/TopButton/scrollFunction";
 import style from "./style.module.scss";
 
 const Movies = () => {
@@ -13,6 +15,7 @@ const Movies = () => {
   const { user } = useSelector((state) => state.usersReducer);
   const { favourites, movies } = useSelector((state) => state.moviesReducer);
   const { moviesSearch } = useSelector((state) => state.searchesReducer);
+  const { page, setPage } = useState(1);
 
   useEffect(() => {
     if (moviesSearch.length) dispatch(fetchMovies(moviesSearch));
@@ -32,7 +35,7 @@ const Movies = () => {
       "guitar",
     ];
     const random = words[Math.floor(Math.random() * words.length)];
-    dispatch(fetchMovies(random));
+    dispatch(fetchMovies(random, page));
   }, []);
 
   const addMovie = (movie) => dispatch(addFavMovie(movie));
@@ -45,8 +48,16 @@ const Movies = () => {
     return isFav;
   };
 
+  window.onscroll = () => {
+    console.log(window.scroll());
+    if (document.documentElement.scrollTop > 100) {
+      // alert("near bottom!");
+    }
+    scrollFunction();
+  };
+
   return (
-    <div className={style.container}>
+    <div className={style.container} id="movies">
       {movies
         ? movies.map((movie) => {
             const isFav = checkFavMovie(movie.imdbID);
@@ -61,6 +72,7 @@ const Movies = () => {
             );
           })
         : null}
+      <TopButton />
     </div>
   );
 };

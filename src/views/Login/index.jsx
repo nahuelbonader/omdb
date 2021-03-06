@@ -33,7 +33,8 @@ function LoginContainer() {
       })
     )
       .then((user) => dispatch(fetchUserMovies(user._id)))
-      .then(() => history.push("/movies"));
+      .then(() => history.push("/movies"))
+      .catch((e) => console.log(e));
   };
 
   return (

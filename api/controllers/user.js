@@ -1,4 +1,5 @@
 const { User, Movie } = require("../db/models");
+const passport = require("passport");
 
 const usersControllers = {
   findAll(req, res) {
@@ -60,8 +61,17 @@ const usersControllers = {
       .then((user) => res.status(200).send(user.movies));
   },
 
-  loginUser(req, res) {
-    res.status(200).send(req.user);
+  loginUser(req, res, next) {
+    passport.authenticate("local", (err, user, info) => {
+      if (err) return next(err);
+      if (!user) {
+        return res.status(401).json("Por qué no llega este mensaje");
+      }
+      req.logIn(user, (err) => {
+        if (err) return next(err);
+        return res.status(200).send(req.user);
+      });
+    })(req, res, next);
   },
 
   logoutUser(req, res) {

@@ -15,10 +15,12 @@ const setFavMovies = (movies) => ({ type: FAVOURITE_MOVIES, movies });
 
 const resetFavMovies = () => ({ type: RESET_FAVS });
 
-const fetchMovies = (search) => (dispatch) =>
+const fetchMovies = (search, page) => (
+  dispatch // infinity con las pages
+) =>
   axios
-    .get(`${IMDB}&s=${search}`)
-    .then((res) => res.data.Search)
+    .get(`${IMDB}&s=${search}&page=${page}`)
+    .then((res) => res.data.Search) // Chequear si es posible utilizar el resto de info
     .then((movies) => dispatch(setMovies(movies)))
     .catch((err) => console.log(err));
 
@@ -27,7 +29,6 @@ const fetchMovie = (idMovie) => (dispatch) =>
     .get(`${IMDB}&i=${idMovie}&plot=full`)
     .then((res) => res.data)
     .then((movie) => {
-      console.log(movie);
       dispatch(setMovie(movie));
     })
     .catch((err) => console.log(err));
