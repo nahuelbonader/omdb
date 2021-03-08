@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import usePrevious from "../../hooks/usePrevious";
 import {
   fetchMovies,
   addFavMovie,
@@ -15,18 +16,22 @@ const Movies = () => {
   const { user } = useSelector((state) => state.usersReducer);
   const { favourites, movies } = useSelector((state) => state.moviesReducer);
   const { moviesSearch } = useSelector((state) => state.searchesReducer);
-  const { page, setPage } = useState(1);
+  const [page, setPage] = useState(1);
+  const prevPage = usePrevious(page);
+  const prevMovieSearch = usePrevious(moviesSearch);
 
   useEffect(() => {
-    if (moviesSearch.length) dispatch(fetchMovies(moviesSearch));
-  }, [moviesSearch]);
+    const newSearch = prevPage == page;
+    if (prevMovieSearch !== moviesSearch) setPage(1);
+    if (moviesSearch) dispatch(fetchMovies(moviesSearch, page, newSearch));
+  }, [moviesSearch, page]);
 
   useEffect(() => {
     const words = [
       "car",
       "run",
       "face",
-      "red",
+      "paris",
       "rich",
       "path",
       "bottom",
@@ -35,8 +40,9 @@ const Movies = () => {
       "guitar",
     ];
     const random = words[Math.floor(Math.random() * words.length)];
-    dispatch(fetchMovies(random, page));
-  }, []);
+    const newSearch = prevPage == page;
+    dispatch(fetchMovies(random, page, newSearch));
+  }, [page]);
 
   const addMovie = (movie) => dispatch(addFavMovie(movie));
   const deleteMovie = (movie) => dispatch(deleteFavMovie(movie));
@@ -48,11 +54,15 @@ const Movies = () => {
     return isFav;
   };
 
-  window.onscroll = () => {
-    console.log(window.scroll());
-    if (document.documentElement.scrollTop > 100) {
-      // alert("near bottom!");
+  const addPage = () => {
+    const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+    if (scrollTop + clientHeight > scrollHeight - 50) {
+      setPage(page + 1);
     }
+  };
+
+  window.onscroll = () => {
+    addPage();
     scrollFunction();
   };
 

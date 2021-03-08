@@ -1,27 +1,26 @@
 import {
-  RECEIVE_MOVIES,
-  SET_MOVIE,
-  FAVOURITE_MOVIES,
+  SET_MOVIES,
+  ADD_MOVIES,
+  SET_FAVOURITE_MOVIES,
   RESET_FAVS,
 } from "../constants";
 
 const initialMoviesState = {
   movies: [],
   favourites: [],
-  movie: {},
 };
 
-export default (state = initialMoviesState, action) => {
+export default (state = initialMoviesState, { type, payload }) => {
   const newState = { ...state };
-  switch (action.type) {
-    case RECEIVE_MOVIES:
-      newState.movies = action.movies;
+  switch (type) {
+    case SET_MOVIES:
+      newState.movies = payload;
       break;
-    case SET_MOVIE:
-      newState.movie = action.movie;
+    case ADD_MOVIES:
+      newState.movies = [...newState.movies, ...payload];
       break;
-    case FAVOURITE_MOVIES:
-      newState.favourites = [...action.movies];
+    case SET_FAVOURITE_MOVIES:
+      newState.favourites = payload;
       break;
     case RESET_FAVS:
       newState.favourites = [];
