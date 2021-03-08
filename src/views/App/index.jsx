@@ -6,11 +6,11 @@ import { fetchUserMovies } from "../../store/actions/movies";
 import Favourites from "../../views/Favourites";
 import Layout from "../../components/Layout";
 import Login from "../../views/Login";
-import Movies from "../../views/Movies";
+import Home from "../../views/Home";
 import Register from "../../views/Register";
 import SingleMovie from "../../views/SingleMovie";
 import Users from "../../views/Users";
-import "../../assets/stylesheets/app.scss";
+import "./app.scss";
 
 const App = () => {
   const { user } = useSelector((state) => state.usersReducer);
@@ -27,7 +27,7 @@ const App = () => {
     <React.Fragment>
       <Layout>
         <Switch>
-          <Route exact path="/movies" component={Movies} />
+          <Route exact path="/movies" component={Home} />
           <Route path="/movies/:idMovie" component={SingleMovie} />
           <Route path="/favourites" component={Favourites} />
           <Route path="/users" component={Users} />

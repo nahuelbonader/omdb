@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteFavMovie, fetchUserMovies } from "../../store/actions/movies";
+import { fetchUserMovies } from "../../store/actions/movies";
+import ScrollWraperContainer from "../../components/ScrollWraperContainer";
 import Movie from "../../components/MovieCard";
 import style from "./style.module.scss";
 
@@ -14,24 +15,19 @@ const FavouritesContainer = () => {
     if (!favourites.length && user._id) dispatch(fetchUserMovies(user._id));
   }, []);
 
-  const deleteMovie = (movie) => dispatch(deleteFavMovie(movie));
-
   const movies = favourites.filter((movie) =>
     movie.Title.toLowerCase().match(favouritesSearch.toLowerCase())
   );
 
   return (
-    <div className={style.container}>
-      {movies.map((movie) => (
-        <Movie
-          key={movie._id}
-          movie={movie}
-          handleClick={deleteMovie}
-          isFav={true}
-          user={user}
-        />
-      ))}
-    </div>
+    <ScrollWraperContainer>
+      <div className={style.container}>
+        {movies &&
+          movies.map((movie) => {
+            return <Movie key={movie.imdbID} movie={movie} />;
+          })}
+      </div>
+    </ScrollWraperContainer>
   );
 };
 

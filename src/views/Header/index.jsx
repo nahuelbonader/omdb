@@ -10,8 +10,8 @@ import {
 } from "../../store/actions/searches";
 import { BsList, BsPeopleCircle, BsPersonPlusFill } from "react-icons/bs";
 import { IoEnterOutline } from "react-icons/io5";
-import Input from "../Input";
-import Logo from "../Logo/index";
+import Input from "../../components/Input";
+import Logo from "../../components/Logo/index";
 import style from "./style.module.scss";
 
 const HeaderContainer = () => {
@@ -73,7 +73,7 @@ const HeaderContainer = () => {
           />
         );
       default:
-        return <Input />;
+        return <Input styles={{ visibility: "hidden" }} />;
     }
   };
 
