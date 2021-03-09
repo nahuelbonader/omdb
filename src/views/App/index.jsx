@@ -30,7 +30,11 @@ const App = () => {
         <Switch>
           <Route exact path="/movies" component={Home} />
           <Route path="/movies/:idMovie" component={SingleMovie} />
-          <Route path="/favourites" component={Favourites} />
+          {user._id ? (
+            <Route path="/favourites" component={Favourites} />
+          ) : (
+            <Redirect from="/favourites" to="/login" />
+          )}
           <Route path="/users" component={Users} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />

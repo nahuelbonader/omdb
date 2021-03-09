@@ -10,14 +10,14 @@ const initialSearchState = {
   usersSearch: "",
 };
 
-export default (state = initialSearchState, action) => {
-  switch (action.type) {
+export default (state = initialSearchState, { type, payload }) => {
+  switch (type) {
     case SET_SEARCH_MOVIES:
-      return { ...state, moviesSearch: action.payload };
+      return { ...state, moviesSearch: payload };
     case SET_SEARCH_FAVOURITES:
-      return { ...state, favouritesSearch: action.payload };
+      return { ...state, favouritesSearch: payload };
     case SET_SEARCH_USERS:
-      return { ...state, usersSearch: action.payload };
+      return { ...state, usersSearch: payload };
     default:
       return state;
   }

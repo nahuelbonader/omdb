@@ -32,9 +32,8 @@
 
     .form {
       width: 90%;
-      height: 75%;
+      height: 80%;
       margin: 3% auto;
-      margin-bottom: 7%;
       padding: 14px 0px;
       display: flex;
       flex-direction: column;
@@ -42,6 +41,36 @@
       background-color: $white;
       border-radius: 20px;
       justify-content: space-around;
+
+      .nameContainer {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .name {
+          margin: 5px auto;
+          height: 7vh;
+          width: 40%;
+          border: none;
+          border-bottom: 2px solid $dark-yellow;
+          outline: none;
+          font-weight: normal;
+          font-size: 15px;
+          padding-left: 3%;
+          box-shadow: 2px 2px 6px $grey;
+          border-radius: 5px;
+
+          &:focus {
+            box-shadow: 2px 2px 6px $grey, 2px 2px 6px $light-yellow;
+          }
+        }
+        .error {
+          font-size: 11px;
+          color: orange;
+          font-weight: bold;
+          margin: 0px 25px;
+        }
+      }
 
       .dataContainer {
         width: 100%;
@@ -76,7 +105,7 @@
       .icon {
         position: absolute;
         right: 69vh;
-        top: 48.5vh;
+        top: 55vh;
         color: $grey;
       }
     }

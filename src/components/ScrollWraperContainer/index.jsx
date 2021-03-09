@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { BsArrowUp } from "react-icons/bs";
 import topFunction from "./topFunction";
 import style from "./style.module.scss";
 
 const ScrollWraper = ({ children, onScroll }) => {
-  const btn = useRef(null);
+  const btn = useRef();
 
   const scrollBtn = () => {
     const topLimit = 100;
@@ -20,8 +20,12 @@ const ScrollWraper = ({ children, onScroll }) => {
     onScroll && onScroll();
   };
 
+  useEffect(() => {
+    scrollBtn();
+  }, []);
+
   const TopButton = () => (
-    <button onClick={topFunction} className={style.hide} ref={btn}>
+    <button onClick={topFunction} className={style.button} ref={btn}>
       <BsArrowUp className={style.icon} />
     </button>
   );
