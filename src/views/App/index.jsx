@@ -18,8 +18,9 @@ const App = () => {
 
   useEffect(() => {
     if (!user._id) {
-      dispatch(fetchUser());
-      dispatch(fetchUserMovies(user._id));
+      dispatch(fetchUser())
+        .then((newUser) => newUser && dispatch(fetchUserMovies(newUser._id)))
+        .catch((err) => console.error(err));
     }
   }, []);
 

@@ -39,7 +39,13 @@ const fetchUser = () => (dispatch) =>
   axios
     .get("/api/auth/me")
     .then((res) => res.data)
-    .then((user) => dispatch(setUser(user)));
+    .then((user) => {
+      dispatch(setUser(user));
+      return user;
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
 
 const logoutUser = () => (dispatch) =>
   axios.post("/api/auth/logout").then(() => dispatch(removeUser()));

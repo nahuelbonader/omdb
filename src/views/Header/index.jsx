@@ -8,7 +8,7 @@ import {
   setSearchUsers,
   setSearchFavourites,
 } from "../../store/actions/searches";
-import { BsList, BsPeopleCircle, BsPersonPlusFill } from "react-icons/bs";
+import { BsList, BsPeopleCircle } from "react-icons/bs";
 import { IoEnterOutline } from "react-icons/io5";
 import Input from "../../components/Input";
 import Logo from "../../components/Logo/index";

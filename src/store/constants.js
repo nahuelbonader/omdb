@@ -1,6 +1,6 @@
 // Movies
-export const SET_MOVIES = "SET_MOVIES";
 export const ADD_MOVIES = "ADD_MOVIES";
+export const RESET_MOVIES = "RESET_MOVIES";
 export const SET_FAVOURITE_MOVIES = "SET_FAVOURITE_MOVIES";
 export const RESET_FAVS = "RESET_FAVS";
 

@@ -1,15 +1,10 @@
 import React, { useRef } from "react";
-import Movie from "../MovieCard";
 import { BsArrowUp } from "react-icons/bs";
+import topFunction from "./topFunction";
 import style from "./style.module.scss";
 
 const ScrollWraper = ({ children, onScroll }) => {
   const btn = useRef(null);
-
-  const topFunction = () => {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  };
 
   const scrollBtn = () => {
     const topLimit = 100;
@@ -26,8 +21,8 @@ const ScrollWraper = ({ children, onScroll }) => {
   };
 
   const TopButton = () => (
-    <button onClick={topFunction} id="topBtn" className={style.hide} ref={btn}>
-      <BsArrowUp className={style.icon} id="topBtn" />
+    <button onClick={topFunction} className={style.hide} ref={btn}>
+      <BsArrowUp className={style.icon} />
     </button>
   );
 

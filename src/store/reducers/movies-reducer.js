@@ -1,5 +1,5 @@
 import {
-  SET_MOVIES,
+  RESET_MOVIES,
   ADD_MOVIES,
   SET_FAVOURITE_MOVIES,
   RESET_FAVS,
@@ -13,8 +13,8 @@ const initialMoviesState = {
 export default (state = initialMoviesState, { type, payload }) => {
   const newState = { ...state };
   switch (type) {
-    case SET_MOVIES:
-      newState.movies = payload;
+    case RESET_MOVIES:
+      newState.movies = [];
       break;
     case ADD_MOVIES:
       newState.movies = [...newState.movies, ...payload];

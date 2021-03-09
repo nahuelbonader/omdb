@@ -1,0 +1,134 @@
+@import "../../assets/stylesheets/colors.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 25vh;
+  height: 60vh;
+  width: 40vw;
+  padding: 5px;
+  background-color: $dark-yellow;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 $grey, 0 6px 20px 0 $grey,
+    -20px -20px 50px 10px orange inset;
+  ::-webkit-input-placeholder {
+    text-align: left;
+  }
+  :-moz-placeholder {
+    text-align: left;
+  }
+
+  .subcontainer {
+    width: 100%;
+    height: 100%;
+    border: solid 3px black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .form {
+      width: 95%;
+      height: 75%;
+      margin: 5% auto;
+      padding: 14px 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $white;
+      border-radius: 20px;
+      justify-content: space-around;
+
+      .dataContainer {
+        width: 100%;
+        height: 14vh;
+        display: flex;
+        flex-direction: column;
+
+        .data {
+          margin: 5px auto;
+          height: 7vh;
+          width: 90%;
+          border: none;
+          border-bottom: 2px solid $dark-yellow;
+          outline: none;
+          font-weight: normal;
+          font-size: 15px;
+          padding-left: 3%;
+          box-shadow: 2px 2px 6px $grey;
+          border-radius: 5px;
+
+          &:focus {
+            box-shadow: 2px 2px 6px $grey, 2px 2px 6px $light-yellow;
+          }
+        }
+        .error {
+          font-size: 11px;
+          color: orange;
+          font-weight: bold;
+          margin: 0px 25px;
+        }
+      }
+      .icon {
+        position: absolute;
+        right: 46vh;
+        top: 49vh;
+        color: $grey;
+      }
+    }
+
+    .btn {
+      height: 6vh;
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: $black;
+      color: $white;
+      outline: none;
+      transition-duration: 0.4s;
+      box-shadow: 2px 2px 6px $grey;
+      margin-top: 12px;
+
+      &:hover {
+        background-color: $dark-yellow;
+        color: $black;
+        box-shadow: 0 4px 16px 0 $grey;
+      }
+    }
+
+    .invitation {
+      width: 100%;
+      height: 6vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5%;
+
+      span {
+        font-size: 0.7em;
+      }
+
+      .link {
+        font-weight: bold;
+        color: $white;
+        font-size: 0.8em;
+        transition-duration: 0.4s;
+
+        &:hover {
+          color: $black;
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+}
