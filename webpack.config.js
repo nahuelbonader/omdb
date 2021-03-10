@@ -4,8 +4,8 @@ const REACT_DIRPATH = path.resolve(__dirname, "src");
 const BUILD_DIRPATH = path.resolve(__dirname, "public");
 
 module.exports = {
-  mode: "development",
-  entry:  path.resolve(REACT_DIRPATH, "index.jsx"),
+  mode: "production",
+  entry: path.resolve(REACT_DIRPATH, "index.jsx"),
   output: {
     path: path.resolve(BUILD_DIRPATH),
     filename: "bundle.js",
