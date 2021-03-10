@@ -1,10 +1,15 @@
 const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const REACT_DIRPATH = path.resolve(__dirname, "src");
 const BUILD_DIRPATH = path.resolve(__dirname, "public");
 
 module.exports = {
   mode: "production",
+  optimization: {
+    minimizer: [new TerserPlugin()],
+  },
+  // mode: "development",
   entry: path.resolve(REACT_DIRPATH, "index.jsx"),
   output: {
     path: path.resolve(BUILD_DIRPATH),
