@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addFavMovie, deleteFavMovie } from "../../store/actions/movies";
 import { BsStarFill, BsStar } from "react-icons/bs";
-import style from "./style.module.scss";
+import originStyle from "./style.module.scss";
 
-export default ({ movie }) => {
+export default ({ movie, externalStyle }) => {
+  const style = externalStyle ? externalStyle : originStyle;
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.usersReducer);
   const { favourites } = useSelector((state) => state.moviesReducer);

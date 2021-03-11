@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../../store/actions/users";
-import { addFavMovie } from "../../store/actions/movies";
-import Users from "../../components/Users";
+import Movie from "./partials/Movie";
+import style from "./style.module.scss";
+import { BsArrowBarLeft, BsArrowBarRight } from "react-icons/bs";
 
 const UsersContainer = () => {
   const dispatch = useDispatch();
@@ -19,11 +20,36 @@ const UsersContainer = () => {
   );
 
   return (
-    <Users
-      users={filteredUsers}
-      userState={user}
-      addFavMovie={(movie) => dispatch(addFavMovie(movie))}
-    />
+    <div className={style.container}>
+      {filteredUsers &&
+        filteredUsers.map(
+          (u) =>
+            u._id !== user._id && (
+              <div className={style.userContainer}>
+                <div className={style.dataContainer}>
+                  <div className={style.icon}>{u.firstName.charAt(0)}</div>
+                  <div className={style.data}>
+                    <h1 className={style.name}>
+                      {u.firstName} {u.lastName}
+                    </h1>
+                    <h2 className={style.favourites}>
+                      Favourites films: {u.movies.length}{" "}
+                    </h2>
+                  </div>
+                </div>
+                {u.movies.length > 0 && (
+                  <div className={style.movies}>
+                    <BsArrowBarLeft className={style.arrow} />
+                    {u.movies.map((movie) => (
+                      <Movie movie={movie} key={movie._id} />
+                    ))}
+                    <BsArrowBarRight className={style.arrow} />
+                  </div>
+                )}
+              </div>
+            )
+        )}
+    </div>
   );
 };
 

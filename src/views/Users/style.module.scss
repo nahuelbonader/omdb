@@ -1,0 +1,86 @@
+@import "../../assets/stylesheets/colors.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .userContainer {
+    width: 90%;
+    margin: 30px auto;
+    box-shadow: -8px -8px 15px $grey, 8px 8px 15px $grey;
+    border-radius: 10px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+
+    // AGREGAR ACORDION A CADA USER
+    // https://www.w3schools.com/howto/howto_js_accordion.asp
+
+    .dataContainer {
+      background-color: $black;
+      display: flex;
+      align-items: center;
+      padding: 3px 5px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+
+      .icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 4px solid $white;
+        background-color: $dark-yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        color: $white;
+        margin: 2px 5px;
+      }
+
+      .data {
+        color: $white;
+        .name {
+          font-size: 1.2em;
+          font-weight: bold;
+          margin: 2px 5px;
+        }
+        .favourites {
+          font-size: 0.8em;
+          font-weight: bold;
+          margin: 1px 8px;
+        }
+      }
+    }
+
+    .movies {
+      display: flex;
+      height: 70vh;
+      width: 100%;
+      overflow: hidden;
+      align-items: center;
+      justify-content: space-between;
+      align-self: center;
+
+      .arrow {
+        font-size: 50px;
+        background-color: $light-grey;
+        position: absolute;
+        top: 50;
+        opacity: 0.5;
+
+        .left {
+          
+          left: 0;
+        }
+
+        .right {
+          right: 0;
+        }
+      }
+    }
+  }
+}
