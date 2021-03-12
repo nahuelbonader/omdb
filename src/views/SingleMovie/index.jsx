@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { IMDB } from "../../store/constants";
+import { OMDB } from "../../store/constants";
 
 const SingleMovie = ({ match }) => {
   const { idMovie } = match.params;
@@ -8,7 +8,7 @@ const SingleMovie = ({ match }) => {
 
   const fetchMovie = (idMovie) =>
     axios
-      .get(`${IMDB}&i=${idMovie}&plot=full`)
+      .get(`${OMDB}&i=${idMovie}&plot=full`)
       .then((res) => res.data)
       .catch((err) => err);
 

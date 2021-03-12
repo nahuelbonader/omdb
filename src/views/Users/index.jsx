@@ -5,6 +5,8 @@ import Movie from "./partials/Movie";
 import style from "./style.module.scss";
 import { BsArrowBarLeft, BsArrowBarRight } from "react-icons/bs";
 
+// https://github.com/gajus/react-css-modules#allowmultiple
+
 const UsersContainer = () => {
   const dispatch = useDispatch();
 

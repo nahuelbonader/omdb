@@ -1,3 +1,5 @@
+const { OMDB_API_KEY, OMDB_API } = process.env;
+
 // Movies
 export const ADD_MOVIES = "ADD_MOVIES";
 export const RESET_MOVIES = "RESET_MOVIES";
@@ -14,5 +16,5 @@ export const SET_SEARCH_MOVIES = "SET_SEARCH_MOVIES";
 export const SET_SEARCH_FAVOURITES = "SET_SEARCH_FAVOURITES";
 export const SET_SEARCH_USERS = "SET_SEARCH_USERS";
 
-// IMDB API
-export const IMDB = "https://www.omdbapi.com/?apikey=4621e76e";
+// OMDB API
+export const OMDB = `${OMDB_API}?apikey=${OMDB_API_KEY}`;

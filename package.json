@@ -6,9 +6,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon back/app.js",
-    "build": "webpack",
-    "buildev": "webpack -w"
+    "dev": "nodemon -r dotenv/config app.js",
+    "build": "webpack --config webpack.config.prod.js",
+    "buildev": "webpack -w -r dotenv/config --config webpack.config.dev.js"
   },
   "keywords": [],
   "author": "Nahuel Bonader",
@@ -20,6 +20,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "file-loader": "^6.2.0",
     "mongoose": "^5.11.17",
     "morgan": "^1.10.0",
     "node-sass": "^4.14.1",
@@ -33,16 +34,18 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "terser-webpack-plugin": "^4.2.3"
+    "terser-webpack-plugin": "^4.2.3",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7",
     "sass": "^1.27.0",
     "sass-loader": "^10.0.4",
     "style-loader": "^2.0.0",

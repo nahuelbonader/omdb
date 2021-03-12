@@ -17,10 +17,11 @@
   border: 1px solid $grey;
   border-radius: 10px;
   padding: 0px 10px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 4px 7px 0 rgba(0, 0, 0, 0.19);
 
   input {
     width: 90%;
-    height: 5vh;
+    height: 6vh;
     border: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;

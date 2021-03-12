@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const {
-  findAll,
+  findUsers,
   createUser,
   addUserMovie,
   findAllUserMovies,
@@ -8,7 +8,7 @@ const {
   authenticateUser,
 } = require("../controllers/user");
 
-router.route("/").get(findAll).post(createUser);
+router.route("/").get(findUsers).post(createUser);
 
 router
   .route("/user/movies")

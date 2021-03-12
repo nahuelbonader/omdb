@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import style from "./style.module.scss";
 
 export default () => (
-  <Link className={style.logo} to="/">
-    OMDb
+  <Link className={style.container} to="/">
+    <img src={`/logo.png`} alt="image" className={style.logo} />
   </Link>
 );

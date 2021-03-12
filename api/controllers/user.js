@@ -2,17 +2,28 @@ const { User, Movie } = require("../db/models");
 const passport = require("passport");
 
 const usersControllers = {
-  findAll(req, res) {
+  findUsers(req, res) {
     User.find()
       .populate("movies")
       .then((users) => res.send(users))
       .catch((err) => res.status(404).send(err));
   },
 
-  createUser(req, res) {
-    User.create(req.body)
-      .then((user) => res.status(201).send(user))
-      .catch((err) => res.status(500).send(err));
+  createUser: async (req, res) => {
+    try {
+      const { firstName, lastName, email, password } = req.body;
+
+      if (!firstName || !lastName || !email || !password)
+        return res.status(400).send("Incomplete data");
+
+      const user = await User.create(req.body);
+
+      if (user) return res.status(400).send("User already exist");
+
+      res.status(201).send({ firstName, lastName, email });
+    } catch (err) {
+      res.status(500).send(err);
+    }
   },
 
   addUserMovie(req, res) {

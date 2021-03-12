@@ -10,7 +10,7 @@ import {
 } from "../../store/actions/searches";
 import { BsList, BsPeopleCircle } from "react-icons/bs";
 import { IoEnterOutline } from "react-icons/io5";
-import Input from "../../components/Input";
+import Input from "../../components/Searcher";
 import Logo from "../../components/Logo/index";
 import style from "./style.module.scss";
 
@@ -48,7 +48,7 @@ const HeaderContainer = () => {
       case "/favourites":
         return (
           <Input
-            placeholder="Find your favourite movie"
+            placeholder="Find your movie"
             handleChange={handleChangeMaker(setSearchFavourites)}
             value={favouritesSearch}
             cleanValue={cleanerMaker(setSearchFavourites)}
@@ -57,7 +57,7 @@ const HeaderContainer = () => {
       case "/movies":
         return (
           <Input
-            placeholder="What movie do you want?"
+            placeholder="Find your favourite movies"
             handleChange={handleChangeMaker(setSearchMovies)}
             value={moviesSearch}
             cleanValue={cleanerMaker(setSearchMovies)}

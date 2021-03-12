@@ -11,6 +11,8 @@ const session = require("express-session");
 const LocalStrategy = require("passport-local").Strategy;
 const { User } = require("./api/db/models");
 const cors = require("cors");
+const { PORT, SECRET } = require("./config");
+const port = PORT || 3000;
 
 // CORS MIDDLEWARE
 app.use(cors());
@@ -35,7 +37,7 @@ app.use(
 );
 
 // CookieParser middleware
-app.use(cookieParser());
+app.use(cookieParser(SECRET));
 
 // Passport middleware
 app.use(passport.initialize());
@@ -85,7 +87,6 @@ app.use("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "./public", "index.html"));
 });
 
-const PORT = process.env.PORT || 1337;
-app.listen(PORT, () =>
-  console.log(chalk.yellow("Server listenning on port"), chalk.bgYellow(PORT))
+app.listen(port, () =>
+  console.log(chalk.yellow("Server listenning on port"), chalk.bgYellow(port))
 );

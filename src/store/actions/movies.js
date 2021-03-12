@@ -4,7 +4,7 @@ import {
   ADD_MOVIES,
   SET_FAVOURITE_MOVIES,
   RESET_FAVS,
-  IMDB,
+  OMDB,
 } from "../constants";
 
 const filterMovies = (movies) => {
@@ -27,7 +27,7 @@ const resetFavMovies = () => ({ type: RESET_FAVS });
 
 const fetchMovies = (search, page) => (dispatch) =>
   axios
-    .get(`${IMDB}&s=${search}&page=${page}`)
+    .get(`${OMDB}&s=${search}&page=${page}`)
     .then((res) => res.data.Search) // Chequear si es posible utilizar el resto de info
     .then((movies) => {
       const filteredMovies = filterMovies(movies);
