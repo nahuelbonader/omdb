@@ -1,4 +1,6 @@
+const webpack = require("webpack");
 const path = require("path");
+
 const TerserPlugin = require("terser-webpack-plugin");
 
 const REACT_DIRPATH = path.resolve(__dirname, "src");
@@ -46,8 +48,24 @@ module.exports = () => {
             },
           ],
         },
+        {
+          test: /\.(jpe?g|gif|png|svg)$/i,
+          use: [
+            {
+              loader: "url-loader",
+              options: {
+                limit: 10000,
+              },
+            },
+          ],
+        },
       ],
     },
     devtool: "source-map",
+    plugins: [
+      new webpack.DefinePlugin({
+        "process.env": JSON.stringify(process.env),
+      }),
+    ],
   };
 };
