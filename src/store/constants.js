@@ -1,4 +1,4 @@
-const { OMDB_API_KEY, OMDB_API } = process.env;
+const { REACT_APP_OMDB_API_KEY, REACT_APP_OMDB_API } = process.env;
 
 // Movies
 export const ADD_MOVIES = "ADD_MOVIES";
@@ -17,4 +17,4 @@ export const SET_SEARCH_FAVOURITES = "SET_SEARCH_FAVOURITES";
 export const SET_SEARCH_USERS = "SET_SEARCH_USERS";
 
 // OMDB API
-export const OMDB = `${OMDB_API}?apikey=${OMDB_API_KEY}`;
+export const OMDB = `${REACT_APP_OMDB_API}?apikey=${REACT_APP_OMDB_API_KEY}`;
