@@ -31,7 +31,6 @@ const loginUser = (user) => (dispatch) =>
       return user;
     })
     .catch((err) => {
-      console.log("MENSAJE", err);
       throw new Error(err);
     });
 

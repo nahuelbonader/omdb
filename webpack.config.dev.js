@@ -4,6 +4,8 @@ const path = require("path");
 const REACT_DIRPATH = path.resolve(__dirname, "src");
 const BUILD_DIRPATH = path.resolve(__dirname, "public");
 
+console.log("Proando");
+
 module.exports = () => {
   return {
     mode: "development",
