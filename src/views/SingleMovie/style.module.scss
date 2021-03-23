@@ -1,0 +1,127 @@
+@import "../../assets/stylesheets/colors.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+  width: 80vw;
+  padding: 5px;
+  margin: auto;
+  border: solid 2px red;
+
+  .titleBar {
+    width: 100%;
+    height: 25%;
+    background-color: $black;
+    color: $white;
+    padding: 10px 20px;
+    border-radius: 20px 20px 0px 0px;
+
+    .btn_fav {
+      position: absolute;
+      left: 13vw;
+      top: 14vh;
+      border-radius: 20px 0px;
+      opacity: 0.7;
+      outline: none;
+      padding: 1px;
+      transition-duration: 500ms;
+
+      @if --isFav {
+        background-color: $black;
+      } @else {
+        background-color: $dark-yellow;
+      }
+
+      &:hover {
+        opacity: 0.9;
+        svg {
+          font-weight: bold;
+        }
+      }
+
+      svg {
+        font-size: 4vh;
+        cursor: pointer;
+
+        @if --isFav {
+          color: $dark-yellow;
+        } @else {
+          color: $black;
+        }
+      }
+    }
+
+    .titleContainer {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      width: 100%;
+
+      .titleSubcontainer {
+        display: flex;
+        align-items: center;
+
+        .title {
+          margin: 0px 10px 0px 0px;
+          font-size: 1.7em;
+        }
+
+        .year {
+          margin: 0px;
+          font-size: 1.3em;
+          font-weight: normal;
+          color: $light-grey;
+        }
+      }
+
+      .ratingContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $light-grey;
+        font-size: 0.8em;
+
+        .rate {
+          font-size: 1.7em;
+          color: $white;
+        }
+
+        svg {
+          font-size: 1.3em;
+          color: $yellow;
+        }
+      }
+    }
+
+    .dataContainer {
+      font-size: 0.8em;
+      color: $light-grey;
+    }
+  }
+
+  .bodyContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 50%;
+    padding: 20px;
+
+    .imgContainer {
+      height: 80%;
+      width: 50%;
+      img {
+        width: auto;
+        height: 80%;
+      }
+    }
+
+    .plot {
+      width: 50%;
+      font-size: 0.8em;
+    }
+  }
+}

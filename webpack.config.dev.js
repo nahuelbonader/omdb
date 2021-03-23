@@ -9,7 +9,7 @@ module.exports = () => {
     mode: "development",
     entry: path.resolve(REACT_DIRPATH, "index.jsx"),
     output: {
-      path: path.resolve(BUILD_DIRPATH),
+      path: BUILD_DIRPATH,
       filename: "bundle.js",
     },
     resolve: {
