@@ -1,57 +1,17 @@
 @import "../../assets/stylesheets/colors.scss";
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 80vw;
-  padding: 5px;
-  margin: auto;
-  border: solid 2px red;
+  width: 60vw;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   .titleBar {
     width: 100%;
-    height: 25%;
     background-color: $black;
     color: $white;
-    padding: 10px 20px;
+    padding: 10px 25px;
     border-radius: 20px 20px 0px 0px;
-
-    .btn_fav {
-      position: absolute;
-      left: 13vw;
-      top: 14vh;
-      border-radius: 20px 0px;
-      opacity: 0.7;
-      outline: none;
-      padding: 1px;
-      transition-duration: 500ms;
-
-      @if --isFav {
-        background-color: $black;
-      } @else {
-        background-color: $dark-yellow;
-      }
-
-      &:hover {
-        opacity: 0.9;
-        svg {
-          font-weight: bold;
-        }
-      }
-
-      svg {
-        font-size: 4vh;
-        cursor: pointer;
-
-        @if --isFav {
-          color: $dark-yellow;
-        } @else {
-          color: $black;
-        }
-      }
-    }
 
     .titleContainer {
       display: flex;
@@ -61,16 +21,18 @@
 
       .titleSubcontainer {
         display: flex;
-        align-items: center;
+        align-items: baseline;
+        hyphens: auto;
+        width: 80%;
 
         .title {
           margin: 0px 10px 0px 0px;
-          font-size: 1.7em;
+          font-size: 1.5em;
         }
 
         .year {
           margin: 0px;
-          font-size: 1.3em;
+          font-size: 1em;
           font-weight: normal;
           color: $light-grey;
         }
@@ -81,7 +43,7 @@
         flex-direction: column;
         align-items: center;
         color: $light-grey;
-        font-size: 0.8em;
+        font-size: 0.7em;
 
         .rate {
           font-size: 1.7em;
@@ -96,7 +58,7 @@
     }
 
     .dataContainer {
-      font-size: 0.8em;
+      font-size: 0.7em;
       color: $light-grey;
     }
   }
@@ -104,25 +66,77 @@
   .bodyContainer {
     display: flex;
     align-items: center;
-    justify-content: space-around;
     width: 100%;
-    height: 50%;
-    padding: 10px 20px;
+    border-radius: 0px 0px 20px 20px;
 
-    .imgContainer {
-      height: 70vh;
-      width: auto;
-
-      img {
-        width: auto;
-        height: 100%;
-        border: solid 2px $black;
-      }
+    img {
+      width: 35%;
+      border-bottom-left-radius: 20px;
     }
+
+    // .btn_fav {
+    //   position: absolute;
+    //   left: 13vw;
+    //   top: 14vh;
+    //   border-radius: 20px 0px;
+    //   opacity: 0.7;
+    //   outline: none;
+    //   padding: 1px;
+    //   transition-duration: 500ms;
+
+    //   @if --isFav {
+    //     background-color: $black;
+    //   } @else {
+    //     background-color: $dark-yellow;
+    //   }
+
+    //   &:hover {
+    //     opacity: 0.9;
+    //     svg {
+    //       font-weight: bold;
+    //     }
+    //   }
+
+    //   svg {
+    //     font-size: 4vh;
+    //     cursor: pointer;
+
+    //     @if --isFav {
+    //       color: $dark-yellow;
+    //     } @else {
+    //       color: $black;
+    //     }
+    //   }
+    // }
 
     .plot {
-      width: 50%;
+      width: 70%;
+      padding: 20px;
+      color: $black;
       font-size: 0.8em;
+      text-align: justify;
     }
+  }
+}
+
+.information {
+  width: 60vw;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: justify;
+  h4 {
+    font-size: 1.1em;
+    margin: 0px 0px 10px 0px;
+  }
+}
+
+p {
+  margin: 7px;
+  font-size: 0.8em;
+  .key {
+    font-size: 1.1em;
+    font-weight: bold;
   }
 }
