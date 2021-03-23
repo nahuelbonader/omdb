@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon -r dotenv/config app.js",
-    "build": "webpack --config webpack.config.prod.js",
+    "build": "webpack -r dotenv/config --config webpack.config.prod.js",
     "buildev": "webpack -w -r dotenv/config --config webpack.config.dev.js"
   },
   "keywords": [],

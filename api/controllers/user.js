@@ -16,11 +16,13 @@ const usersControllers = {
       if (!firstName || !lastName || !email || !password)
         return res.status(400).send("Incomplete data");
 
-      const user = await User.create(req.body);
+      const user = await User.findOne({ email });
 
       if (user) return res.status(400).send("User already exist");
 
-      res.status(201).send({ firstName, lastName, email });
+      const newUser = await User.create(req.body);
+
+      if (newUser) res.status(201).send({ firstName, lastName, email });
     } catch (err) {
       res.status(500).send(err);
     }
