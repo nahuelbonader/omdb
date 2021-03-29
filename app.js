@@ -54,11 +54,12 @@ passport.use(
       User.findOne({ email })
         .then((user) => {
           if (!user) return done(null, false, { message: "Incorrect email" });
-          // user.hash(password, user.salt).then((hash) => {
-          if (password !== user.password)
-            return done(null, false, { message: "Incorrect password" });
-          return done(null, user, { message: "User logged in" });
-          // });
+          user.comparePassword(password, (err, isMatch) => {
+            if (err) throw err
+            if (!isMatch)
+              return done(null, false, { message: "Incorrect password" });
+            return done(null, user, { message: "User logged in" });
+          });
         })
         .catch(done);
     }
