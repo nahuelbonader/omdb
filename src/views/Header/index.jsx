@@ -77,20 +77,25 @@ const HeaderContainer = () => {
     }
   };
 
-  const handleResponsive = () => {
+  const handleResponsive = (action) => {
     const x = document.getElementById("btnsNavbar");
-    console.log(x);
 
-    x.className = x.className === style.btns ? style.responsive : style.btns;
+    switch (action) {
+      case "open":
+        x.className = style.responsive;
+        break;
+      case "close":
+        x.className = style.btns;
+        break;
+      default:
+        x.className =
+          x.className === style.btns ? style.responsive : style.btns;
+    }
   };
 
   useEffect(() => {
-    const closeResponsive = () => {
-      const x = document.getElementById("btnsNavbar");
-      x.className = style.btns;
-    };
-
     const content = document.getElementById("content");
+    const closeResponsive = () => handleResponsive("close");
 
     content.addEventListener("click", closeResponsive);
   }, []);
@@ -138,7 +143,7 @@ const HeaderContainer = () => {
         </Link>
 
         <Link className={style.btn} to={user._id ? `/favourites` : "/login"}>
-          Favs
+          Favourites
         </Link>
       </div>
     </div>

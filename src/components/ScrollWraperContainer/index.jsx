@@ -15,17 +15,21 @@ const ScrollWraper = ({ children, onScroll }) => {
       : (btn.current.className = style.hide);
   };
 
-  window.onscroll = () => {
+  const scrollFunction = () => {
     scrollBtn();
     onScroll && onScroll();
   };
 
   useEffect(() => {
     scrollBtn();
-  }, []);
+
+    window.addEventListener("scroll", scrollFunction);
+
+    return () => window.removeEventListener("scroll", scrollFunction);
+  });
 
   const TopButton = () => (
-    <button onClick={topFunction} className={style.button} ref={btn}>
+    <button onClick={topFunction} className={style.hide} ref={btn}>
       <BsArrowUp className={style.icon} />
     </button>
   );

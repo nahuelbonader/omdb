@@ -2,8 +2,11 @@ import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../../store/actions/users";
 import Movie from "./partials/Movie";
-import style from "./style.module.scss";
+import s from "./style.module.scss";
 import { BsArrowBarLeft, BsArrowBarRight } from "react-icons/bs";
+
+const RIGHT = "right";
+const LEFT = "left";
 
 // https://github.com/gajus/react-css-modules#allowmultiple
 
@@ -21,44 +24,56 @@ const UsersContainer = () => {
     user.firstName.toLowerCase().match(usersSearch.toLowerCase())
   );
 
-  const horizontalScroll = (id) => {
-    const userContainer = document.getElementById(id);
-    console.log(userContainer.scrollWidth);
-    console.log(userContainer.scrollLeft);
-    console.log(document.body.scrollLeft);
-    userContainer.scrollLeft = userContainer.scrollWidth;
+  const horizontalScroll = (id, direction) => {
+    const container = document.getElementById(id);
+
+    switch (direction) {
+      case RIGHT:
+        container.scrollLeft += 200;
+        break;
+      case LEFT:
+        container.scrollLeft -= 200;
+        break;
+    }
   };
 
   return (
-    <div className={style.container}>
+    <div className={s.container}>
       {filteredUsers &&
         filteredUsers.map(
           (u) =>
             u._id !== user._id && (
-              <div
-                className={style.userContainer}
-                id={u._id}
-                onClick={() => horizontalScroll(u._id)}
-                key={u._id}
-              >
-                <div className={style.dataContainer}>
-                  <div className={style.icon}>{u.firstName.charAt(0)}</div>
-                  <div className={style.data}>
-                    <h1 className={style.name}>
+              <div className={s.userContainer} key={u._id}>
+                <div className={s.dataContainer}>
+                  <div className={s.icon}>{u.firstName.charAt(0)}</div>
+
+                  <div className={s.data}>
+                    <h1 className={s.name}>
                       {u.firstName} {u.lastName}
                     </h1>
-                    <h2 className={style.favourites}>
+                    <h2 className={s.favourites}>
                       Favourites films: {u.movies.length}{" "}
                     </h2>
                   </div>
                 </div>
+
                 {u.movies.length > 0 && (
-                  <div className={style.movies}>
-                    <BsArrowBarLeft className={style.arrow} />
+                  <div className={s.movies} id={u._id}>
                     {u.movies.map((movie) => (
                       <Movie movie={movie} key={movie._id} />
                     ))}
-                    <BsArrowBarRight className={style.arrow} />
+                    {u.movies.length > 4 && (
+                      <div className={s.arrow}>
+                        <BsArrowBarLeft
+                          className={s.left}
+                          onClick={() => horizontalScroll(u._id, LEFT)}
+                        />
+                        <BsArrowBarRight
+                          className={s.right}
+                          onClick={() => horizontalScroll(u._id, RIGHT)}
+                        />
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

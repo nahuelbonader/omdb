@@ -1,15 +1,16 @@
 @import "../../../../assets/stylesheets/colors.scss";
 
 .movie {
-  min-width: 190px;
-  max-width: 190px;
-  height: 90%;
+  min-width: 170px;
+  max-width: 170px;
+  height: 85%;
   border: 2px solid $black;
   border-radius: 10px;
   background-color: $grey;
   margin: 0px 15px;
   transition-duration: 0.3s;
   box-shadow: -4px 4px 15px $grey;
+  display: inline-block;
 
   &:hover {
     transition-duration: 0.4s;
