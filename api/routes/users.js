@@ -5,8 +5,9 @@ const {
   addUserMovie,
   findAllUserMovies,
   deleteUserMovie,
-  authenticateUser,
 } = require("../controllers/user");
+
+const { authenticateUser } = require("../controllers/auth");
 
 router.route("/").get(findUsers).post(createUser);
 

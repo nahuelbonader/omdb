@@ -10,8 +10,11 @@ const removeUser = () => ({ type: REMOVE_USER });
 const createUser = (user) =>
   axios
     .post("/api/users", user)
-    .then((res) => res.data)
-    .then((user) => console.log(user));
+    .then((res) => console.log(res))
+    .then((user) => console.log(user))
+    .catch(({ response }) => {
+      throw new Error(response.data.message);
+    });
 
 const fetchUsers = () => (dispatch) =>
   axios
@@ -30,8 +33,8 @@ const loginUser = (user) => (dispatch) =>
       dispatch(setUser(user));
       return user;
     })
-    .catch((err) => {
-      throw new Error(err);
+    .catch(({ response }) => {
+      throw new Error(response.data.message);
     });
 
 const fetchUser = () => (dispatch) =>

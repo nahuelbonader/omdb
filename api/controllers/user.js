@@ -14,11 +14,11 @@ const usersControllers = {
       const { firstName, lastName, email, password } = req.body;
 
       if (!firstName || !lastName || !email || !password)
-        return res.status(400).send("Incomplete data");
+        return res.status(400).send({ message: "Incomplete data" });
 
       const user = await User.findOne({ email });
 
-      if (user) return res.status(400).send("User already exist");
+      if (user) return res.send(400, { message: "User already exist" });
 
       const newUser = await User.create(req.body);
 
@@ -72,34 +72,6 @@ const usersControllers = {
     User.findById(req.user._id)
       .populate("movies")
       .then((user) => res.status(200).send(user.movies));
-  },
-
-  loginUser(req, res, next) {
-    passport.authenticate("local", (err, user, info) => {
-      if (err) return next(err);
-      if (!user) {
-        return res.status(401).json("Por qué no llega este mensaje");
-      }
-      req.logIn(user, (err) => {
-        if (err) return next(err);
-        return res.status(200).send(req.user);
-      });
-    })(req, res, next);
-  },
-
-  logoutUser(req, res) {
-    req.logOut();
-    res.sendStatus(200);
-  },
-
-  loggedInUser(req, res) {
-    if (!req.user) return res.sendStatus(401);
-    res.send(req.user);
-  },
-
-  authenticateUser(req, res, next) {
-    if (!req.isAuthenticated()) return res.sendStatus(401);
-    next();
   },
 };
 

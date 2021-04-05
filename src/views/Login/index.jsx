@@ -11,6 +11,7 @@ function LoginContainer() {
   const dispatch = useDispatch();
   const history = useHistory();
   const [showPassword, setShowPassword] = useState(false);
+  const [errorResponse, setErrorResponse] = useState(false);
 
   const emailValidator = (email) => email.includes("@") && email.includes(".");
   const passwordValidator = (password) => password.length >= 8;
@@ -36,14 +37,17 @@ function LoginContainer() {
     )
       .then((user) => dispatch(fetchUserMovies(user._id)))
       .then(() => history.push("/movies"))
-      .catch((e) => console.log(e));
+      .catch((err) => {
+        setErrorResponse(err.message);
+        setTimeout(() => setErrorResponse(false), 4000);
+      });
   };
 
   return (
     <div className={style.container}>
       <div className={style.subcontainer}>
         <form onSubmit={handleSubmit} className={style.form}>
-          <div className={style.dataContainer}> 
+          <div className={style.dataContainer}>
             <input
               placeholder={"email"}
               value={email.value}
@@ -62,13 +66,18 @@ function LoginContainer() {
               className={style.data}
             />
             {password.error && <p className={style.error}>{password.error}</p>}
+
+            {errorResponse && <p className={style.error}>{errorResponse}</p>}
           </div>
 
           <button className={style.btn} type="submit">
             Login
           </button>
 
-          <div onClick={() => setShowPassword(!showPassword)} className={style.iconContainer}>
+          <div
+            onClick={() => setShowPassword(!showPassword)}
+            className={style.iconContainer}
+          >
             {showPassword ? (
               <BsEye className={style.icon} />
             ) : (
