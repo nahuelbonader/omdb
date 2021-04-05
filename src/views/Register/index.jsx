@@ -83,7 +83,10 @@ function Register() {
             Sign in
           </button>
 
-          <div onClick={() => setShowPassword(!showPassword)}>
+          <div
+            onClick={() => setShowPassword(!showPassword)}
+            className={style.iconContainer}
+          >
             {showPassword ? (
               <BsEye className={style.icon} />
             ) : (

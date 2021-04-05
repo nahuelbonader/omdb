@@ -76,11 +76,17 @@
           margin: 0px 25px;
         }
       }
-      .icon {
+
+      .iconContainer {
         position: absolute;
-        right: 69vh;
-        top: 48.5vh;
-        color: $grey;
+        right: 35vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon {
+          color: $grey;
+        }
       }
     }
 
